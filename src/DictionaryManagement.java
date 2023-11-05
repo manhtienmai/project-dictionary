@@ -26,9 +26,9 @@ public class DictionaryManagement {
     }
     // read file dic.txt and store it in a list
     public void insertFromFile(String path) {
+
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
-
 
             while((line = reader.readLine()) != null) {
                 String[] data = line.split("\t");
@@ -109,7 +109,21 @@ public class DictionaryManagement {
 
     // Tìm kiếm từ các kí tự đầu
     public void dictionarySearch() {
-
+        boolean check = false;
+        String s = Validation.getString("Nhập kí tự đầu: ");
+        int n = s.length();
+        System.out.println(String.format("%-5s | %-15s | %-15s", "No", "English", "Vietnamese"));
+        for (Word word : dictionary.getWords()) {
+            if (word.getWord_target().length() >= n) {
+                if (word.getWord_target().substring(0, n).equalsIgnoreCase(s)) {
+                    int index = dictionary.getIndex(word.getWord_target());
+                    System.out.println(String.format("%-5d | %-15s | %-15s", index + 1, word.getWord_target(), word.getWord_explain()));
+                    check = true;
+                }
+            }
+        }
+        if (!check) System.err.println("Không tìm thấy từ có kí tự " + s + " trong từ điển");
+        System.out.println("----------------------------------------------------------------");
     }
 
     //tìm kiếm từ
