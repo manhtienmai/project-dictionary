@@ -23,7 +23,7 @@ public class DictionaryCommandLine {
             switch (action) {
                 case 0:
                     System.out.print("Goodbye!\n");
-                    break;
+                    return;
                 case 1:
                     dictionaryManagement.addWord();
                     break;
