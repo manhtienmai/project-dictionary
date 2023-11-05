@@ -1,106 +1,151 @@
-import java.io.BufferedWriter;
 import java.io.BufferedReader;
-import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.util.Dictionary;
-import java.util.Scanner;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ArrayList;
 
+/**
+ * dictionary
+ */
 public class DictionaryManagement {
-    private Dictionary dictionary;
-    private ArrayList<Word> library = new ArrayList<Word>();
-    String path = "dictionaries.txt";
-    public DictionaryManagement(Dictionary dictionary) {
-        this.dictionary = dictionary;
-    }
 
-    public void insertFromCommandLine() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of words: ");
-        int n = sc.nextInt();
-        sc.nextLine();
+    private Dictionary dictionary = new Dictionary();
 
-        for (int i = 0; i < n; i++) {
-            System.out.println("Enter English word: ");
-            String eng = sc.nextLine();
-            System.out.println("Enter Vietnamese meaning");
-            String vie = sc.nextLine();
-            dictionary.addWord(new Word(eng, vie));
+
+    public void insertFromCommandline(){
+        int n = Validation.getInt("Nhập số lượng từ: ", 1, Integer.MAX_VALUE);
+
+        while (n > 0) {
+            String word_target = Validation.getString("Nhập từ tiếng Anh: ") + "\n";
+            String word_explain = Validation.getString("Nhập nghĩa tiếng Việt: ");
+            dictionary.addWordtoDictionary(new Word(word_target,word_explain));
+            n--;
         }
+
     }
-
-    public void insertFromFile() {
-
+    // read file dic.txt and store it in a list
+    public void insertFromFile(String path) {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
+
+
             while((line = reader.readLine()) != null) {
                 String[] data = line.split("\t");
                 if (data.length == 2) {
-                    String eng = data[0].trim();
-                    String vie = data[1].trim();
-                    dictionary.addWord(new Word(eng, vie));
+                    String word_target = data[0].trim();
+                    String word_explain = data[1].trim();
+
+                    //set vào words
+                    dictionary.addWordtoDictionary(new Word(word_target,word_explain));
+                }
+            }
+            System.out.println("Đã truy cập vào file :" + path);
+        }
+        catch (IOException e) {
+            System.err.println("< Không tìm thấy file! >");
+        }
+        System.out.println("----------------------------------------------------------------");
+    }
+
+    // Thêm cụm từ Anh- Việt vào từ điển
+    public void addWord() {
+        String word_target = Validation.getString("Nhập từ bạn muốn thêm: ");
+        boolean had_Word = false;
+        for (Word word : dictionary.getWords()) {
+            if (word.getWord_target().equalsIgnoreCase(word_target)) {
+                had_Word = true;
+                // Khi gặp từ muốn thêm đã có trong từ điển
+                if (!Validation.getYN(word_target + " đã có trong danh sách, bạn có muốn cập nhật không? Y/N : ")) {
+                    return;
+                }
+                else {
+                    editWord();
                 }
             }
         }
-        catch (IOException e) {
-            e.printStackTrace();
+        if (!had_Word) {
+            String word_explain = Validation.getString("Nhập nghĩa tiếng Việt: ");
+
+            dictionary.addWordtoDictionary(new Word(word_target,word_explain));
+            System.out.println("Thêm dữ liệu thành công !!");
+            System.out.println("----------------------------------------------------------------");
         }
-    }
-    public void addWord(Word word) {
-        library.add(new Word(word.getWord_target(), word.getWord_explain()));
     }
 
-    public String getWords(){
-        return library;
-    }
-    public String dictionarySearch(String target) {
-        for (String[] entry : library) {
-            if (entry[0].equals(target)) {
-                return entry[1];
-            } else if (entry[1].equals(target)) {
-                return entry[0];
+    // Xóa cụm từ Anh- Việt khỏi từ điển
+    public void deleteWord() {
+        String word_target = Validation.getString("Nhập từ bạn muốn xóa: ");
+        boolean check = false;
+        for (int i = 0; i < dictionary.getWords().size(); i++) {
+            if (dictionary.getWords().get(i).getWord_target().equalsIgnoreCase(word_target)) {
+
+                dictionary.getWords().remove(i);
+                System.out.println("Xóa thành công !!");
+                check = true;
             }
         }
-        String s = "Can't find this word.";
-        return  s;
+        if (!check) System.out.println("Không tìm thấy từ muốn xóa trong từ điển :((");
+        System.out.println("----------------------------------------------------------------");
     }
-    public void editWord(String tagert) {
-        int pos = 0;
-        for (int i = 0; i < library.size(); i++) {
-            if (library.get(i).getWord_target().equals(tagert)) {
-                pos = i;
-                break;
+    // Sửa từ tiếng Anh
+    public void editWord() {
+        String word_target = Validation.getString("Nhập từ bạn muốn sửa: ");
+        boolean check = false;
+        for (Word word : dictionary.getWords()) {
+            if (word.getWord_target().equalsIgnoreCase(word_target)) {
+                String word_new = Validation.getString("Nhập từ mới: ");
+                String explain_new = Validation.getString("Nhập nghĩa tiếng Việt mới: ");
+                word.setWord_target(word_new);
+                word.setWord_explain(explain_new);
+                check = true;
+
+
             }
         }
-        if (library.get(pos).getWord_target().equals(tagert)) {
-            library.get(pos).setWord_explain(tagert);
-        }
+        if (!check) System.out.println("Không tìm thấy từ muốn sửa trong từ điển :((");
+        System.out.println("----------------------------------------------------------------");
     }
-    public void deleteWord(String target) {
-        for (int i = 0; i < library.size(); i++) {
-            String[] entry = library.get(i);
-            if (entry[0].equals(target) || entry[1].equals(target)) {
-                library.remove(i);
-                break;
+
+    // Tìm kiếm từ các kí tự đầu
+    public void dictionarySearch() {
+
+    }
+
+    //tìm kiếm từ
+    public void lookUp() {
+        boolean check = false;
+        String word_target = Validation.getString("Nhập từ tìm kiếm: ");
+        for (Word word : dictionary.getWords()) {
+            if (word.getWord_target().equalsIgnoreCase(word_target)) {
+                System.out.println(String.format("%-5s | %-15s | %-15s", "No", "English", "Vietnamese"));
+                check = true;
+                int index = dictionary.getIndex(word.getWord_target());
+                System.out.println(String.format("%-5d | %-15s | %-15s", index + 1, word.getWord_target(), word.getWord_explain()));
             }
         }
+        if (!check) System.err.println("Không tìm thấy " + word_target + " trong từ điển");
+        System.out.println("----------------------------------------------------------------");
     }
-    public void dictionaryExportToFile() {
+    // ghi vào File txt
+    public void dictionaryExportToFile(String path) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
-            for (String[] entry : library) {
-                String word = entry[0];
-                String meaning = entry[1];
-                String line = word + "\t" + meaning;
+            for (Word word : dictionary.getWords()) {
+                String line = word.getWord_target() + "\t" + word.getWord_explain();
                 writer.write(line);
                 writer.newLine(); // Thêm dấu xuống dòng sau mỗi cặp từ và nghĩa
             }
+            System.out.println("Xuất dữ liệu vào file " + path + " thành công!" );
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Không thể xuất dữ liệu vào file " + path + " :((");
         }
+    }
+
+    public void display() {
+        for (int i = 0; i < dictionary.getWords().size(); i++) {
+            Word word = dictionary.getWords().get(i);
+            System.out.println(String.format("%-5d | %-15s | %-15s", (i + 1), word.getWord_target(), word.getWord_explain()));
+        }
+        System.out.println("----------------------------------------------------------------");
     }
 }
