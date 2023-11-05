@@ -17,7 +17,7 @@ public class DictionaryManagement {
         int n = Validation.getInt("Nhập số lượng từ: ", 1, Integer.MAX_VALUE);
 
         while (n > 0) {
-            String word_target = Validation.getString("Nhập từ tiếng Anh: ") + "\n";
+            String word_target = Validation.getString("Nhập từ tiếng Anh: ");
             String word_explain = Validation.getString("Nhập nghĩa tiếng Việt: ");
             dictionary.addWordtoDictionary(new Word(word_target,word_explain));
             n--;
@@ -122,6 +122,7 @@ public class DictionaryManagement {
                 }
             }
         }
+
         if (!check) System.err.println("Không tìm thấy từ có kí tự " + s + " trong từ điển");
         System.out.println("----------------------------------------------------------------");
     }

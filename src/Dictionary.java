@@ -38,9 +38,20 @@ public class Dictionary {
         }
     }
 
-<<<<<<< HEAD
+//    public String binarySearch(String s) {
+//        int l = 0, r = words.size() - 1;
+//        while (l < r) {
+//            int m = (l + r) / 2;
+//            Word midValue = words.get(m);
+//            if (midValue.getWord_target().compareToIgnoreCase(s) > 0) {
+//                r = m - 1;
+//            } else if (midValue.getWord_target().compareToIgnoreCase(s) < 0) {
+//                l = m + 1;
+//            } else {
+//                return midValue.getWord_explain();
+//            }
+//        }
+//        return "Không tìm thấy " + s + " trong từ điển";
+//    }
 
 }
-=======
-}
->>>>>>> 8f8f24da8660ac0a6e309823f2c6848c932f29ce
