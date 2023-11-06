@@ -105,31 +105,24 @@ public class DictionaryManagement {
     // Sửa từ tiếng Anh
     public void editWord() {
         String word_target = Validation.getString("Nhập từ bạn muốn sửa: ");
-//        boolean check = false;
-//        for (Word word : dictionary.getWords()) {
-//            if (word.getWord_target().equalsIgnoreCase(word_target)) {
-//                String word_new = Validation.getString("Nhập từ mới: ");
-//                String explain_new = Validation.getString("Nhập nghĩa tiếng Việt mới: ");
-//                word.setWord_target(word_new);
-//                word.setWord_explain(explain_new);
-//                check = true;
-//            }
-//        }
-         int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
-         if (index != -1) {
-                 String word_new = Validation.getString("Nhập từ mới: ");
-                 int indexOfWordNew = dictionary.indexOfBinarySearch(word_new, 0, dictionary.getWords().size() - 1);
-                 if (indexOfWordNew != -1) {
-                     if (!Validation.getYN(word_new + " đã có trong danh sách, bạn có muốn cập nhật không? Y/N : ")) {
-                         return;
-                     }
-                 }
-                 String explain_new = Validation.getString("Nhập nghĩa tiếng Việt mới: ");
-                 dictionary.getWords().remove(index);
-                 dictionary.addWordtoDictionary(new Word(word_new, explain_new));
-                 System.out.println("Sửa thành công !");
-         }
-        else System.out.println("Không tìm thấy từ muốn sửa trong từ điển :((");
+        boolean check = false;
+        for (Word word : dictionary.getWords()) {
+            if (word.getWord_target().equalsIgnoreCase(word_target)) {
+                String word_new = Validation.getString("Nhập từ mới: ");
+                String explain_new = Validation.getString("Nhập nghĩa tiếng Việt mới: ");
+                word.setWord_target(word_new);
+                word.setWord_explain(explain_new);
+                check = true;
+            }
+        }
+        // int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
+        // if (index != -1) {
+        //     String word_new = Validation.getString("Nhập từ mới: ");
+        //         String explain_new = Validation.getString("Nhập nghĩa tiếng Việt mới: ");
+        //         dictionary.getWords().remove(index);
+        //         dictionary.getWords().add(new Word(word_new, explain_new));
+        // }
+        if (!check) System.out.println("Không tìm thấy từ muốn sửa trong từ điển :((");
         System.out.println("----------------------------------------------------------------");
     }
 
@@ -166,7 +159,7 @@ public class DictionaryManagement {
 //            }
 //        }
         int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
-        if (index != -1) {
+        if (index > -1) {
             System.out.println(String.format("%-5s | %-15s | %-15s", "No", "English", "Vietnamese"));
             System.out.println(String.format("%-5d | %-15s | %-15s", index + 1, word_target, dictionary.getWords().get(index).getWord_explain()));
         }
