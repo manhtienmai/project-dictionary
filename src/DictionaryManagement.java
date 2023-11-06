@@ -116,7 +116,7 @@ public class DictionaryManagement {
         for (Word word : dictionary.getWords()) {
             if (word.getWord_target().length() >= n) {
                 if (word.getWord_target().substring(0, n).equalsIgnoreCase(s)) {
-                    int index = dictionary.getIndex(word.getWord_target());
+                    int index = dictionary.getIndexToAdd(word.getWord_target());
                     System.out.println(String.format("%-5d | %-15s | %-15s", index + 1, word.getWord_target(), word.getWord_explain()));
                     check = true;
                 }
@@ -131,15 +131,20 @@ public class DictionaryManagement {
     public void lookUp() {
         boolean check = false;
         String word_target = Validation.getString("Nhập từ tìm kiếm: ");
-        for (Word word : dictionary.getWords()) {
-            if (word.getWord_target().equalsIgnoreCase(word_target)) {
-                System.out.println(String.format("%-5s | %-15s | %-15s", "No", "English", "Vietnamese"));
-                check = true;
-                int index = dictionary.getIndex(word.getWord_target());
-                System.out.println(String.format("%-5d | %-15s | %-15s", index + 1, word.getWord_target(), word.getWord_explain()));
-            }
+//        for (Word word : dictionary.getWords()) {
+//            if (word.getWord_target().equalsIgnoreCase(word_target)) {
+//                System.out.println(String.format("%-5s | %-15s | %-15s", "No", "English", "Vietnamese"));
+//                check = true;
+//                int index = dictionary.getIndex(word.getWord_target());
+//                System.out.println(String.format("%-5d | %-15s | %-15s", index + 1, word.getWord_target(), word.getWord_explain()));
+//            }
+//        }
+        int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
+        if (index > -1) {
+            System.out.println(String.format("%-5s | %-15s | %-15s", "No", "English", "Vietnamese"));
+            System.out.println(String.format("%-5d | %-15s | %-15s", index + 1, word_target, dictionary.getWords().get(index).getWord_explain()));
         }
-        if (!check) System.err.println("Không tìm thấy " + word_target + " trong từ điển");
+        else System.err.println("Không tìm thấy " + word_target + " trong từ điển");
         System.out.println("----------------------------------------------------------------");
     }
     // ghi vào File txt

@@ -15,7 +15,7 @@ public class Dictionary {
         this.words = words;
     }
 
-    public int getIndex(String word_target) {
+    public int getIndexToAdd(String word_target) {
         int l = 0, r = words.size();
         while (l < r) {
             int m = (l + r) / 2;
@@ -32,26 +32,22 @@ public class Dictionary {
     }
 
     public void addWordtoDictionary(Word word) {
-        int index = getIndex(word.getWord_target());
+        int index = getIndexToAdd(word.getWord_target());
         if (index >= 0) {
             words.add(index, word);
         }
     }
 
-//    public String binarySearch(String s) {
-//        int l = 0, r = words.size() - 1;
-//        while (l < r) {
-//            int m = (l + r) / 2;
-//            Word midValue = words.get(m);
-//            if (midValue.getWord_target().compareToIgnoreCase(s) > 0) {
-//                r = m - 1;
-//            } else if (midValue.getWord_target().compareToIgnoreCase(s) < 0) {
-//                l = m + 1;
-//            } else {
-//                return midValue.getWord_explain();
-//            }
-//        }
-//        return "Không tìm thấy " + s + " trong từ điển";
-//    }
+    public int indexOfBinarySearch(String s, int l, int r) {
+        if (l > r) return -1;
+        int m = (l + r) / 2;
+        if (words.get(m).getWord_target().equalsIgnoreCase(s)) {
+            return m;
+        } else if (words.get(m).getWord_target().compareToIgnoreCase(s) < 0) {
+            return indexOfBinarySearch(s, m + 1, r);
+        } else {
+            return indexOfBinarySearch(s, l, m - 1);
+        }
+    }
 
 }
