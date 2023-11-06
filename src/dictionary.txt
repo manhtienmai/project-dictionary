@@ -7369,6 +7369,7 @@ Tables	Bàn
 Tablet	Máy tính bảng
 Tablets	Máy tính bảng
 Tabs	Tambs
+Tacit	noi ngam
 Tackle	Giải quyết
 Tactics	Tacics
 Tag	Thẻ
