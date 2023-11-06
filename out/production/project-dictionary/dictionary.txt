@@ -98,7 +98,10 @@ Acute	Cấp tính
 Ad	Quảng cáo
 Adam	Quảng cáo
 Adams	Quảng cáo
+<<<<<<< HEAD
 Adapt	Sự thích nghi
+=======
+>>>>>>> fd9b73f56989521cdfa4bf74c57ab42610b2b90b
 Adaptation	Thích ứng
 Adapted	Thích nghi
 Adapter	Bộ chuyển đổi
@@ -307,6 +310,10 @@ Analyze	Phân tích
 Analyzed	Phân tích
 Anatomy	Giải phẫu
 Anchor	Mỏ neo
+<<<<<<< HEAD
+Anchovy	Cá cơm
+=======
+>>>>>>> fd9b73f56989521cdfa4bf74c57ab42610b2b90b
 Ancient	Cổ xưa
 And	Và
 Andrew	Đã rút
@@ -377,6 +384,11 @@ Appearing	Xuất hiện
 Appears	Xuất hiện
 Appendix	Phụ lục
 Apple	Táo
+<<<<<<< HEAD
+Apple pie	Bánh táo
+Appletini	Nước  táo ép
+=======
+>>>>>>> fd9b73f56989521cdfa4bf74c57ab42610b2b90b
 Appliance	Thiết bị
 Appliances	Các thiết bị
 Applicable	Áp dụng
@@ -414,6 +426,10 @@ Aquarium	Thủy cung
 Aquatic	Thủy sinh
 Arab	Tiếng ả rập
 Arabic	Tiếng ả rập
+<<<<<<< HEAD
+Arancini	Cơm viên chiên Ý
+=======
+>>>>>>> fd9b73f56989521cdfa4bf74c57ab42610b2b90b
 Arbitrary	Độc đoán
 Arbitration	Trọng tài
 Arc	Vòng cung
@@ -526,6 +542,10 @@ Atlantic	Đại tây dương
 Atlas	Tập bản đồ
 Atmosphere	Bầu không khí
 Atmospheric	Khí quyển
+<<<<<<< HEAD
+Atole	Đồ uống được làm từ bột ngô
+=======
+>>>>>>> fd9b73f56989521cdfa4bf74c57ab42610b2b90b
 Atom	Nguyên tử
 Atomic	Nguyên tử
 Attach	Đính kèm
@@ -590,6 +610,10 @@ Avatar	Hình đại diện
 Avenue	Đại lộ
 Average	Trung bình
 Aviation	Hàng không
+<<<<<<< HEAD
+Avocado	Bơ
+=======
+>>>>>>> fd9b73f56989521cdfa4bf74c57ab42610b2b90b
 Avoid	Tránh
 Avoiding	Tránh
 Award	Giải thưởng
@@ -5481,6 +5505,10 @@ Pillow	Gối
 Pills	Thuốc
 Pilot	Phi công
 Pine	Thông
+<<<<<<< HEAD
+=======
+Pineapple	Quả dứa
+>>>>>>> fd9b73f56989521cdfa4bf74c57ab42610b2b90b
 Pink	Hồng hào
 Pins	Ghim
 Pioneer	Tiên phong
