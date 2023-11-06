@@ -98,6 +98,7 @@ Acute	Cấp tính
 Ad	Quảng cáo
 Adam	Quảng cáo
 Adams	Quảng cáo
+Adapt	Sự thích nghi
 Adaptation	Thích ứng
 Adapted	Thích nghi
 Adapter	Bộ chuyển đổi
@@ -5480,7 +5481,6 @@ Pillow	Gối
 Pills	Thuốc
 Pilot	Phi công
 Pine	Thông
-Pineapple	Quả dứa
 Pink	Hồng hào
 Pins	Ghim
 Pioneer	Tiên phong
