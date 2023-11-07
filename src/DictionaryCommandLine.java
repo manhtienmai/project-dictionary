@@ -42,7 +42,7 @@ public class DictionaryCommandLine {
                     dictionaryManagement.dictionarySearch();
                     break;
                 case 7:
-
+                    dictionaryManagement.playGame();
                     break;
                 case 8:
                     path = Validation.getString("Nhập file : ");

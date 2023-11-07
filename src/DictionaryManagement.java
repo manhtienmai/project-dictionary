@@ -3,6 +3,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * dictionary
@@ -129,7 +130,7 @@ public class DictionaryManagement {
                  dictionary.addWordtoDictionary(new Word(word_new, explain_new));
                  System.out.println("Sửa thành công !");
          }
-        else System.out.println("Không tìm thấy từ muốn sửa trong từ điển :((");
+        else System.err.println("Không tìm thấy từ muốn sửa trong từ điển :((");
         System.out.println("----------------------------------------------------------------");
     }
 
@@ -149,7 +150,7 @@ public class DictionaryManagement {
             }
         }
 
-        if (!check) System.err.println("Không tìm thấy từ có kí tự " + s + " trong từ điển");
+        if (!check) System.err.println("Không tìm thấy từ có kí tự \"" + s + "\" trong từ điển. Nhập hành động mới: ");
         System.out.println("----------------------------------------------------------------");
     }
 
@@ -185,6 +186,11 @@ public class DictionaryManagement {
         } catch (IOException e) {
             System.err.println("Không thể xuất dữ liệu vào file " + path + " :((");
         }
+    }
+
+    public void playGame() {
+        Game game = new Game();
+        game.gamePlaying();
     }
 
     public void display() {

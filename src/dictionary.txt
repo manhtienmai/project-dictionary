@@ -214,6 +214,7 @@ Agricultural	Nông nghiệp
 Agriculture	Nông nghiệp
 Ah	À
 Ahead	Phía trước
+Ahhhh	A
 Aid	Viện trợ
 Aids	Viện trợ
 Aim	Mục đích

@@ -214,6 +214,7 @@ Agricultural	Nông nghiệp
 Agriculture	Nông nghiệp
 Ah	À
 Ahead	Phía trước
+Ahhhh	A
 Aid	Viện trợ
 Aids	Viện trợ
 Aim	Mục đích
@@ -7369,6 +7370,7 @@ Tables	Bàn
 Tablet	Máy tính bảng
 Tablets	Máy tính bảng
 Tabs	Tambs
+Tacit	noi ngam
 Tackle	Giải quyết
 Tactics	Tacics
 Tag	Thẻ
