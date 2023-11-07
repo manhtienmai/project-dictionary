@@ -98,7 +98,7 @@ public class DictionaryManagement {
             dictionary.getWords().remove(index);
             System.out.println("Xóa thành công !!");
         }
-        else System.out.println("Không tìm thấy từ muốn xóa trong từ điển :((");
+        else System.err.println("Không tìm thấy từ muốn xóa trong từ điển :((");
         System.out.println("----------------------------------------------------------------");
     }
 
