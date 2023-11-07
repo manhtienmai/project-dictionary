@@ -3,6 +3,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * dictionary
@@ -115,6 +116,22 @@ public class DictionaryManagement {
 //                check = true;
 //            }
 //        }
+<<<<<<< HEAD
+         int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
+         if (index != -1) {
+                 String word_new = Validation.getString("Nhập từ mới: ");
+                 int indexOfWordNew = dictionary.indexOfBinarySearch(word_new, 0, dictionary.getWords().size() - 1);
+                 if (indexOfWordNew != -1) {
+                     if (!Validation.getYN(word_new + " đã có trong danh sách, bạn có muốn cập nhật không? Y/N : ")) {
+                         return;
+                     }
+                 }
+                 String explain_new = Validation.getString("Nhập nghĩa tiếng Việt mới: ");
+                 dictionary.getWords().remove(index);
+                 dictionary.addWordtoDictionary(new Word(word_new, explain_new));
+                 System.out.println("Sửa thành công !");
+         }
+=======
         int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
         if (index != -1) {
             String word_new = Validation.getString("Nhập từ mới: ");
@@ -129,6 +146,7 @@ public class DictionaryManagement {
             dictionary.addWordtoDictionary(new Word(word_new, explain_new));
             System.out.println("Sửa thành công !");
         }
+>>>>>>> 1f2156844d18b349e7a30258c095ca86878cf6c7
         else System.err.println("Không tìm thấy từ muốn sửa trong từ điển :((");
         System.out.println("----------------------------------------------------------------");
     }
@@ -192,6 +210,11 @@ public class DictionaryManagement {
         } catch (IOException e) {
             System.err.println("Không thể xuất dữ liệu vào file " + path + " :((");
         }
+    }
+
+    public void playGame() {
+        Game game = new Game();
+        game.gamePlaying();
     }
 
     public void display() {

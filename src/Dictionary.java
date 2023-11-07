@@ -1,7 +1,12 @@
 import java.util.*;
 
-
+/**
+ * Dictionary.
+ */
 public class Dictionary {
+    /**
+     * Words.
+     */
     private ArrayList<Word> words = new ArrayList<>();
 
     public Dictionary() {
@@ -15,6 +20,9 @@ public class Dictionary {
         this.words = words;
     }
 
+    /**
+     * Vi tri thich hop de add.
+     */
     public int getIndexToAdd(String word_target) {
         int l = 0, r = words.size();
         while (l < r) {
@@ -31,6 +39,9 @@ public class Dictionary {
         return l;
     }
 
+    /**
+     * Add word vao index.
+     */
     public void addWordtoDictionary(Word word) {
         int index = getIndexToAdd(word.getWord_target());
         if (index >= 0) {
@@ -38,6 +49,9 @@ public class Dictionary {
         }
     }
 
+    /**
+     * Tim kiem nhi phan.
+     */
     public int indexOfBinarySearch(String s, int l, int r) {
         if (l > r) return -1;
         int m = (l + r) / 2;
