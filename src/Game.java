@@ -42,6 +42,10 @@ public class Game {
         }
     }
 
+<<<<<<< HEAD
+=======
+    //Đọc dữ liệu từ file
+>>>>>>> 1f2156844d18b349e7a30258c095ca86878cf6c7
     public void readDictionaryFromFile(String path) {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
@@ -57,25 +61,45 @@ public class Game {
         }
     }
 
+<<<<<<< HEAD
+=======
+    //Chọn từ ngẫu nhiên.
+>>>>>>> 1f2156844d18b349e7a30258c095ca86878cf6c7
     public String chooseWordFromDictionary() {
         Random random = new Random();
         return dictionary.get(random.nextInt(dictionary.size()));
     }
 
+<<<<<<< HEAD
+=======
+    //Thiết lập lại
+>>>>>>> 1f2156844d18b349e7a30258c095ca86878cf6c7
     public void renderGame(String guessedWord, int badGuessCount) {
         System.out.println("Guessed Word: " + guessedWord);
         System.out.println("Số lượng đoán sai: " + badGuessCount);
     }
 
+<<<<<<< HEAD
+=======
+    //Nhập từ đoán.
+>>>>>>> 1f2156844d18b349e7a30258c095ca86878cf6c7
     public char readAGuess() {
         System.out.print("Từ bạn đoán: ");
         return sc.nextLine().charAt(0);
     }
 
+<<<<<<< HEAD
+=======
+    //Check từ có xuất hiện không.
+>>>>>>> 1f2156844d18b349e7a30258c095ca86878cf6c7
     public boolean contains(String secretWord, char guess) {
         return secretWord.indexOf(guess) != -1;
     }
 
+<<<<<<< HEAD
+=======
+    //Cập nhật từ đang đoán.
+>>>>>>> 1f2156844d18b349e7a30258c095ca86878cf6c7
     public StringBuilder update(StringBuilder guessedWord, String secretWord, char guess) {
         for (int i = 0; i < secretWord.length(); i++) {
             if (secretWord.charAt(i) == guess) {

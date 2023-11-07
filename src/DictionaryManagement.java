@@ -68,11 +68,11 @@ public class DictionaryManagement {
         int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
         if (index >= 0){
             if (!Validation.getYN(word_target + " đã có trong danh sách, bạn có muốn cập nhật không? Y/N : ")) {
-                    return;
-                }
-                else {
-                    editWord();
-                }
+                return;
+            }
+            else {
+                editWord();
+            }
         }
         if (index == -1) {
             String word_explain = Validation.getString("Nhập nghĩa tiếng Việt: ");
@@ -99,7 +99,7 @@ public class DictionaryManagement {
             dictionary.getWords().remove(index);
             System.out.println("Xóa thành công !!");
         }
-        else System.out.println("Không tìm thấy từ muốn xóa trong từ điển :((");
+        else System.err.println("Không tìm thấy từ muốn xóa trong từ điển :((");
         System.out.println("----------------------------------------------------------------");
     }
 
@@ -116,6 +116,7 @@ public class DictionaryManagement {
 //                check = true;
 //            }
 //        }
+<<<<<<< HEAD
          int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
          if (index != -1) {
                  String word_new = Validation.getString("Nhập từ mới: ");
@@ -130,6 +131,22 @@ public class DictionaryManagement {
                  dictionary.addWordtoDictionary(new Word(word_new, explain_new));
                  System.out.println("Sửa thành công !");
          }
+=======
+        int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
+        if (index != -1) {
+            String word_new = Validation.getString("Nhập từ mới: ");
+            int indexOfWordNew = dictionary.indexOfBinarySearch(word_new, 0, dictionary.getWords().size() - 1);
+            if (indexOfWordNew != -1) {
+                if (!Validation.getYN(word_new + " đã có trong danh sách, bạn có muốn cập nhật không? Y/N : ")) {
+                    return;
+                }
+            }
+            String explain_new = Validation.getString("Nhập nghĩa tiếng Việt mới: ");
+            dictionary.getWords().remove(index);
+            dictionary.addWordtoDictionary(new Word(word_new, explain_new));
+            System.out.println("Sửa thành công !");
+        }
+>>>>>>> 1f2156844d18b349e7a30258c095ca86878cf6c7
         else System.err.println("Không tìm thấy từ muốn sửa trong từ điển :((");
         System.out.println("----------------------------------------------------------------");
     }
@@ -174,6 +191,13 @@ public class DictionaryManagement {
         else System.err.println("Không tìm thấy " + word_target + " trong từ điển");
         System.out.println("----------------------------------------------------------------");
     }
+
+    //Game
+    public void playGame() {
+        Game game = new Game();
+        game.gamePlaying();
+    }
+
     // ghi vào File txt
     public void dictionaryExportToFile(String path) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
