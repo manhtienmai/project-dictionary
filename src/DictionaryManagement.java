@@ -173,6 +173,13 @@ public class DictionaryManagement {
         else System.err.println("Không tìm thấy " + word_target + " trong từ điển");
         System.out.println("----------------------------------------------------------------");
     }
+
+    //Game
+    public void playGame() {
+        Game game = new Game();
+        game.gamePlaying();
+    }
+
     // ghi vào File txt
     public void dictionaryExportToFile(String path) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
