@@ -118,6 +118,7 @@ public class DictionaryManagement {
          int index = dictionary.indexOfBinarySearch(word_target, 0, dictionary.getWords().size() - 1);
          if (index != -1) {
                  String word_new = Validation.getString("Nhập từ mới: ");
+                 // cập nhật index của từ mới
                  int indexOfWordNew = dictionary.indexOfBinarySearch(word_new, 0, dictionary.getWords().size() - 1);
                  if (indexOfWordNew != -1) {
                      if (!Validation.getYN(word_new + " đã có trong danh sách, bạn có muốn cập nhật không? Y/N : ")) {
