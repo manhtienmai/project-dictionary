@@ -13,13 +13,17 @@ public class Game {
     private StringBuilder guessedWord;
     private int badGuessCount;
     private Scanner sc = new Scanner(System.in);
-    private static final int MAX_BAD_GUESS_COUNT = 10;
+    private static final int MAX_BAD_GUESS_COUNT = 20;
+
+    private int hintCount;
 
     public Game() {
         readDictionaryFromFile("src/dictionary.txt");
         secretWord = chooseWordFromDictionary();
         guessedWord = new StringBuilder("-".repeat(secretWord.length()));
+        hintCount = 2;
         badGuessCount = 0;
+
         sc = new Scanner(System.in);
     }
 
@@ -31,6 +35,11 @@ public class Game {
                 guessedWord = update(guessedWord, secretWord, guess);
             } else {
                 badGuessCount++;
+                if (badGuessCount >= 5) {
+                    if (askForHint()) {
+                        giveHint();
+                    }
+                }
             }
         } while (badGuessCount < MAX_BAD_GUESS_COUNT && !secretWord.equals(guessedWord.toString()));
 
@@ -60,6 +69,39 @@ public class Game {
     public String chooseWordFromDictionary() {
         Random random = new Random();
         return dictionary.get(random.nextInt(dictionary.size()));
+    }
+
+    public void giveHint() {
+        if (hintCount > 0) {
+            int hiddenIndex = 0;
+            for (int i = 0; i < secretWord.length(); i++) {
+                if (guessedWord.charAt(i) == '-') {
+                    hiddenIndex = i;
+                    break;
+                }
+            }
+            char hintChar = secretWord.charAt(hiddenIndex);
+            System.out.println("Gợi ý: Từ cần đoán có chứa kí tự '" + hintChar + "'");
+            hintCount--;
+            if (hintCount == 0) {
+                System.out.println("Bạn đã hết số lần gợi ý!");
+            } else {
+                System.out.println("Số lần gợi ý còn lại: " + hintCount);
+            }
+        } else {
+            System.out.println("Bạn đã hết số lần gợi ý!");
+        }
+    }
+
+
+    public boolean askForHint() {
+        if (hintCount > 0) {
+            System.out.print("Bạn muốn sử dụng gợi ý không ?(Y/N) : ");
+            String answer = sc.nextLine();
+            return answer.equalsIgnoreCase("Y");
+        } else {
+            return false;
+        }
     }
 
     public void renderGame(String guessedWord, int badGuessCount) {
