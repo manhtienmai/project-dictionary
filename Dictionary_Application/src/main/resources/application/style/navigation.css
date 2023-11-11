@@ -1,0 +1,80 @@
+.root {
+    -button-color: #8a97a0;
+    -hover-button-color: #3b4045;
+
+    -purple-color: #6c7bc4;
+    -hover-purple-color: #5a609b;
+
+    -text-color: #6e7576;
+    -hover-text-color: #3b4045;
+
+    -gray-color: #f0f0f0;
+    -title-color: #080809;
+    -hover-background-color: #E1E4E8;
+
+    -font-family: 'Arial', sans-serif;
+    -font-size: 13px;
+}
+
+.first-color {
+    -fx-background-color: #ffffff;
+}
+
+.second-color {
+    -fx-background-color: #f9f9fb;
+}
+
+.third-color {
+    -fx-background-color: #f1f3f6;
+}
+
+/* Button*/
+
+.button {
+    -fx-background-color: none;
+    -fx-text-fill: --text-color;
+    -fx-font-size: --font-size;
+    -fx-padding: 12px;
+    -fx-content-display: top;
+    -fx-graphic-text-gap: 12;
+    -fx-font-family: --font-family;
+}
+.button .graphic {
+    -fx-padding: 6px;
+}
+
+.button:hover {
+    -fx-background-color: -hover-background-color;
+    -fx-text-fill: -hover-text-color;
+    -fx-cursor: pointer;
+}
+
+.button.active {
+    -fx-background-color: -hover-background-color;
+    -fx-text-fill: -hover-text-color;
+    -fx-cursor: pointer;
+}
+
+.button-favicon:hover {
+    -fx-background-color: none;
+    -fx-text-fill: -text-color;
+    -fx-font-size: -font-size;
+    -fx-cursor: default;
+}
+
+/* Icon*/
+.button-search {
+    -fx-graphic: url('../images/search-icon.png');
+}
+.button-translate {
+    -fx-graphic: url('../images/translate-icon.png');
+}
+.button-favourite {
+    -fx-graphic: url('../images/favourite-icon.png');
+}
+.button-history {
+    -fx-graphic: url('../images/history-icon.png');
+}
+.button-setting {
+    -fx-graphic: url('../images/setting-icon.png');
+}

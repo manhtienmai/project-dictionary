@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <VBox prefHeight="64.0" prefWidth="66.0">
+      <ImageView fitHeight="71.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../images/logo.png" />
+      </ImageView>
+   </VBox>
+   <VBox layoutX="-1.0" layoutY="127.0" prefHeight="252.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+      <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="90.0" styleClass="button-search" stylesheets="@../style/navigation.css" text="Search" />
+      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="90.0" styleClass="button-translate" stylesheets="@../style/navigation.css" text="Translate" />
+      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="90.0" styleClass="button-favourite" stylesheets="@../style/navigation.css" text="Favourite" />
+      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="90.0" styleClass="button-history" stylesheets="@../style/navigation.css" text="History" />
+   </VBox>
+   <HBox layoutY="-4.0" prefHeight="72.0" prefWidth="800.0" style="-fx-background-color: #9BBEC8;" />
+   <VBox layoutX="-1.0" layoutY="68.0" prefHeight="58.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;" />
+   <VBox layoutX="-1.0" layoutY="413.0" prefHeight="186.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+      <children>
+         <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting" stylesheets="@../style/navigation.css" text="Setting" />
+      </children>
+   </VBox>
+</AnchorPane>
