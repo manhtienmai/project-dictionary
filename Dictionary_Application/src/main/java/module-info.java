@@ -6,6 +6,8 @@ module com.example.dictionary_application {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
+    requires java.net.http;
+    requires com.google.gson;
 
     opens application to javafx.fxml;
     exports application;

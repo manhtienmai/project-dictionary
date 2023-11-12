@@ -32,34 +32,15 @@
 
 .button {
     -fx-background-color: none;
-    -fx-text-fill: --text-color;
-    -fx-font-size: --font-size;
+    -fx-text-fill: black;
+    -fx-font-size: 13px;
     -fx-padding: 12px;
     -fx-content-display: top;
     -fx-graphic-text-gap: 12;
-    -fx-font-family: --font-family;
+    -fx-font-family: "Arial";
 }
 .button .graphic {
     -fx-padding: 6px;
-}
-
-.button:hover {
-    -fx-background-color: -hover-background-color;
-    -fx-text-fill: -hover-text-color;
-    -fx-cursor: pointer;
-}
-
-.button.active {
-    -fx-background-color: -hover-background-color;
-    -fx-text-fill: -hover-text-color;
-    -fx-cursor: pointer;
-}
-
-.button-favicon:hover {
-    -fx-background-color: none;
-    -fx-text-fill: -text-color;
-    -fx-font-size: -font-size;
-    -fx-cursor: default;
 }
 
 /* Icon*/
@@ -78,3 +59,90 @@
 .button-setting {
     -fx-graphic: url('../images/setting-icon.png');
 }
+
+/* translate*/
+.header-pane {
+    -fx-background-color: #b9e0cc;
+}
+.content-pane {
+    -fx-background-color: #08172a;
+}
+.button-style {
+    -fx-background-color: #427D9D;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+}
+.language-field {
+    -fx-background-color: #9BBEC8;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.text-area {
+    -fx-control-inner-background: #f0f0f0;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+}
+/*.text-field {*/
+/*    -fx-background-color: #9BBEC8;*/
+/*    -fx-border-color: black;*/
+/*    -fx-border-width: 2;*/
+/*    -fx-font-size: 27px;*/
+/*    -fx-font-weight: bold;*/
+/*}*/
+
+.text-field:hover {
+    -fx-background-color: #a9d0e8;
+}
+
+.text-field:focused {
+    -fx-background-color: #8ac7e0;
+}
+
+.back-button {
+    -fx-background-radius: 5;
+    -fx-font-size: 14px;
+}
+.button-shadow {
+    -fx-background-color: #164863;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-padding: 10px 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.button:hover {
+    -fx-background-color: #1E5A82; /* Slightly lighter blue for hover */
+}
+
+/*.translate-button {*/
+/*    -fx-background-color: transparent;*/
+/*    -fx-border-color: white;*/
+/*    -fx-border-style: solid inside;*/
+/*    -fx-border-width: 2;*/
+/*    -fx-border-insets: 5;*/
+/*    -fx-border-radius: 5;*/
+/*    -fx-padding: 10 20 10 20;*/
+/*    -fx-font-size: 16px;*/
+/*}*/
+.translate-button {
+    -fx-background-color: linear-gradient(to right, #AF40FF, #5B42F3 50%, #00DDEB);
+    -fx-border-color: transparent;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-text-fill: white;
+    -fx-font-family: "Phantomsans", sans-serif;
+    -fx-font-size: 16px;
+    -fx-padding: 16px 24px;
+    -fx-effect: dropshadow(three-pass-box, rgba(151, 65, 252, 0.2), 15, 0, 0, 5);
+    -fx-cursor: hand;
+}
+
+.translate-button:hover {
+    -fx-background-color: linear-gradient(to right, #8A2BE2, #3B2FBA 50%, #008B8B);
+}
+

@@ -14,6 +14,7 @@ public class DictionaryManagement {
     private Dictionary dictionary = new Dictionary();
 
 
+
     public void insertFromCommandline(){
         int n = Validation.getInt("Nhập số lượng từ: ", 1, Integer.MAX_VALUE);
 
@@ -191,6 +192,7 @@ public class DictionaryManagement {
         }
     }
 
+
     public void playGame() {
         Game game = new Game();
         game.gamePlaying();
@@ -203,4 +205,5 @@ public class DictionaryManagement {
         }
         System.out.println("----------------------------------------------------------------");
     }
+
 }

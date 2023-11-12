@@ -1,5 +1,8 @@
 package application;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Scanner;
 
 public class Validation {
@@ -41,6 +44,25 @@ public class Validation {
             } else if (s.equalsIgnoreCase("n")) return false;
 
             System.err.println("Nhập Y hoặc N !!");
+        }
+    }
+
+    public static boolean isValidUrl(String strUrl) {
+        try {
+            new URL(strUrl).toURI();
+            System.out.println("Valid URL: " + strUrl);
+            return true;
+        } catch (Exception exception) {
+            System.out.println("Invalid URL" + exception.getMessage());
+            return false;
+        }
+    }
+
+    public static String encode(String url) {
+        try {
+            return URLEncoder.encode(url, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            return url;
         }
     }
 }
