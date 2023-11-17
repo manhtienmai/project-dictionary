@@ -7,29 +7,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <Pane prefHeight="100.0" prefWidth="800.0" styleClass="header-pane" stylesheets="@../style/navigation.css">
-      <children>
-         <Text fill="#1e2b0e" fontSmoothingType="LCD" layoutX="268.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DICTIONARY" wrappingWidth="264.8032989501953">
-            <font>
-               <Font name="Montserrat Regular" size="39.0" />
-            </font>
-         </Text>
-      </children>
+      <Text fill="#1e2b0e" fontSmoothingType="LCD" layoutX="268.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="DICTIONARY" wrappingWidth="264.8032989501953">
+         <font>
+            <Font name="Montserrat Regular" size="39.0"/>
+         </font>
+      </Text>
    </Pane>
-   <AnchorPane layoutY="100.0" prefHeight="500.0" prefWidth="800.0" styleClass="content-pane" stylesheets="@../style/navigation.css">
-      <children>
-         <VBox prefHeight="348.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-search" stylesheets="@../style/navigation.css" text="Search" />
-            <Button fx:id="translateButton" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-translate" stylesheets="@../style/navigation.css" text="Translate" />
-            <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#onFavouriteButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-favourite" stylesheets="@../style/navigation.css" text="Favourite" />
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-history" stylesheets="@../style/navigation.css" text="History" />
-         </VBox>
-         <VBox layoutY="313.0" prefHeight="186.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
-            <children>
-               <Button fx:id="settingButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSettingButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting" stylesheets="@../style/navigation.css" text="Setting" />
-            </children>
-         </VBox>
-      </children>
+   <AnchorPane layoutY="100.0" prefHeight="500.0" prefWidth="800.0" styleClass="content-pane"
+               stylesheets="@../style/navigation.css">
+      <VBox prefHeight="348.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+         <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="50.0"
+                 prefWidth="90.0" styleClass="button-search" stylesheets="@../style/navigation.css" text="Search"/>
+         <Button fx:id="translateButton" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefHeight="50.0"
+                 prefWidth="90.0" styleClass="button-translate" stylesheets="@../style/navigation.css"
+                 text="Translate"/>
+         <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#onFavouriteButtonClick" prefHeight="50.0"
+                 prefWidth="90.0" styleClass="button-favourite" stylesheets="@../style/navigation.css"
+                 text="Favourite"/>
+         <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="50.0"
+                 prefWidth="90.0" styleClass="button-history" stylesheets="@../style/navigation.css" text="History"/>
+      </VBox>
+      <VBox layoutY="313.0" prefHeight="186.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+         <Button fx:id="settingButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                 onAction="#onSettingButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting"
+                 stylesheets="@../style/navigation.css" text="Setting"/>
+      </VBox>
    </AnchorPane>
 </AnchorPane>

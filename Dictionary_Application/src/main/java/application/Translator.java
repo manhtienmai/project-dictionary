@@ -40,7 +40,7 @@ public class Translator {
         try {
             JsonElement jsonElement = JsonParser.parseString(responseBody);
             if (jsonElement == null || !jsonElement.isJsonArray()) {
-                return "Invalid response format";
+                return "Invalid response";
             }
 
             JsonArray jsonArray = jsonElement.getAsJsonArray();
@@ -50,7 +50,6 @@ public class Translator {
             return firstTranslation.get("text").getAsString();
         } catch (Exception e) {
             e.printStackTrace();
-            return "Error parsing translation response";
         }
     }
 

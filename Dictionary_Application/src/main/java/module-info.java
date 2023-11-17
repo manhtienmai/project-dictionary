@@ -8,6 +8,9 @@ module com.example.dictionary_application {
     requires com.almasb.fxgl.all;
     requires java.net.http;
     requires com.google.gson;
+    requires javafx.media;
+    requires org.apache.httpcomponents.httpclient;
+    requires org.apache.httpcomponents.httpcore;
 
     opens application to javafx.fxml;
     exports application;

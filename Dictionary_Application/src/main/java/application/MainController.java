@@ -36,7 +36,7 @@ public class MainController {
 
     @FXML
     private void onFavouriteButtonClick() {
-        loadView("/application/fxml/favourite.fxml", "Favourite");
+        loadView("/application/fxml/edit.fxml", "Favourite");
     }
 
     @FXML
