@@ -1,5 +1,7 @@
 package application;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,7 +43,7 @@ public class SearchController {
     @FXML
     private Button backButton;
     private final ObservableList<Word> allWords = FXCollections.observableArrayList();
-
+    private final SpeakTTS tts = new SpeakTTS();
     @FXML
     private void onBackButtonClick() {
         try {
@@ -61,6 +63,16 @@ public class SearchController {
         DbConnection connect = new DbConnection();
         Connection connectDB = connect.getDBConnection();
         String query = "select word, detail from tbl_edict";
+
+        //add listener for searchField
+        searchField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                filterWords(newValue);
+            }
+        });
+
+
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(query);
@@ -81,13 +93,30 @@ public class SearchController {
         System.out.println("Initialize method");
     }
 
+    private void filterWords(String searchText) {
+        ObservableList<Word> filteredWords = FXCollections.observableArrayList();
+
+        if (searchText == null || searchText.isEmpty()) {
+            filteredWords.addAll(allWords);
+        }else {
+            for (Word word : allWords) {
+                if (word.getWord_target().toLowerCase().contains(searchText.toLowerCase())) {
+                    filteredWords.add(word);
+                }
+            }
+        }
+
+        wordView.setItems(filteredWords);
+    }
     @FXML
     private void onSpeakButtonClick(){
         speakButton.setOnAction(event -> {
             Word selectedWord = wordView.getSelectionModel().getSelectedItem();
             if (selectedWord != null) {
                 String wordToSpeak = selectedWord.getWord_target();
-                SpeakTTS.synthesizeText(wordToSpeak);
+                // to call non-static method on instance
+                tts.synthesizeText(wordToSpeak);
+//                SpeakTTS.synthesizeText(wordToSpeak);
             }
         });
     }

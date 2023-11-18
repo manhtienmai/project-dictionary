@@ -12,9 +12,6 @@ import java.io.IOException;
 public class DictionaryManagement {
 
     private Dictionary dictionary = new Dictionary();
-
-
-
     public void insertFromCommandline(){
         int n = Validation.getInt("Nhập số lượng từ: ", 1, Integer.MAX_VALUE);
 

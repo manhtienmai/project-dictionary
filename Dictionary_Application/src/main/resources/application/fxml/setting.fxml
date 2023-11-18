@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SettingController">
-    <ComboBox fx:id="voiceComboBox" layoutX="176.0" layoutY="120.0" />
-    <Slider fx:id="speedSlider" layoutX="288.0" layoutY="125.0" max="2.0" min="0.5" value="1.0" />
-    <Button layoutX="238.0" layoutY="219.0" onAction="#saveSetting" text="Save" />
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SettingController">
+    <ComboBox fx:id="voiceComboBox" layoutX="102.0" layoutY="138.0" prefHeight="39.0" prefWidth="86.0" />
+    <Slider fx:id="speedSlider" layoutX="288.0" layoutY="125.0" max="2.0" min="0.5" prefHeight="52.0" prefWidth="197.0" value="1.0" />
+    <Button layoutX="279.0" layoutY="240.0" onAction="#saveSetting" text="Save" />
+   <MenuBar layoutX="-1.0" layoutY="37.0" prefHeight="25.0" prefWidth="600.0">
+     <menus>
+       <Menu mnemonicParsing="false" text="Phát âm">
+         <items>
+           <MenuItem mnemonicParsing="false" text="hhh" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Thêm từ">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Delete" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Sửa từ">
+         <items>
+           <MenuItem mnemonicParsing="false" text="About" />
+         </items>
+       </Menu>
+         <Menu mnemonicParsing="false" text="Xóa từ">
+           <items>
+             <MenuItem mnemonicParsing="false" text="Action 1" />
+           </items>
+         </Menu>
+     </menus>
+   </MenuBar>
 
 </AnchorPane>

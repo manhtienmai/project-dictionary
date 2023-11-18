@@ -3,26 +3,34 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class Translator {
-    private final String subscriptionKey = "416825b5dc89445dab1b6828bebcd8f9";
-    private final String endpoint = "https://api.cognitive.microsofttranslator.com";
-    private final String region = "southeastasia";
+public class Translation extends APIService {
+
+    public Translation() {
+        super("416825b5dc89445dab1b6828bebcd8f9",
+                "https://api.cognitive.microsofttranslator.com",
+                "southeastasia");
+    }
+
+    @Override
+    public String makeRequestAPI(String text) {
+        return translate("en", "vi", text);
+    }
 
     public String translate(String from, String to, String text) {
         HttpClient client = HttpClient.newHttpClient();
-        String url = endpoint + "/translate?api-version=3.0&from=" + from + "&to=" + to;
+        String url = endpointUrl + "/translate?api-version=3.0&from=" + from + "&to=" + to;
         String requestBody = "[{\"Text\":\"" + text + "\"}]";
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .header("Content-Type", "application/json")
-                .header("Ocp-Apim-Subscription-Key", subscriptionKey)
+                .header("Ocp-Apim-Subscription-Key", apiKey)
                 .header("Ocp-Apim-Subscription-Region", region)
                 .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                 .build();
@@ -50,12 +58,13 @@ public class Translator {
             return firstTranslation.get("text").getAsString();
         } catch (Exception e) {
             e.printStackTrace();
+            return "Error parsing translation response";
         }
     }
 
     public static void main(String[] args) {
-        Translator translator = new Translator();
-        String translatedText = translator.translate("en", "vi", "nation");
+        Translation translation = new Translation();
+        String translatedText = translation.makeRequestAPI("nation");
         System.out.println(translatedText);
     }
 }

@@ -13,20 +13,24 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-public class SpeakTTS{
-//    @Override
-//    public void start(Stage primaryStage) {
-//        synthesizeText("i want to sleep immediately");
-//    }
-    private static final String API_KEY = "ce6578568eec4b1a95672c4654fb0cf1";
-    private static final String REGION = "eastus";
+public class SpeakTTS extends APIService{
 
-    public static void synthesizeText(String text) {
-        String ttsUrl = "https://" + REGION + ".tts.speech.microsoft.com/cognitiveservices/v1";
+    public SpeakTTS() {
+        super("ce6578568eec4b1a95672c4654fb0cf1",
+                "https://eastus.tts.speech.microsoft.com/cognitiveservices/v1",
+                "eastus");
+    }
+
+    @Override
+    public String makeRequestAPI(String text) {
+        return synthesizeText(text);
+    }
+    public String synthesizeText(String text) {
+        String ttsUrl = "https://" + region + ".tts.speech.microsoft.com/cognitiveservices/v1";
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpPost request = new HttpPost(ttsUrl);
-            request.setHeader("Ocp-Apim-Subscription-Key", API_KEY);
+            request.setHeader("Ocp-Apim-Subscription-Key", apiKey);
             request.setHeader("Content-Type", "application/ssml+xml");
             request.setHeader("X-Microsoft-OutputFormat", "audio-16khz-128kbitrate-mono-mp3");
 
@@ -47,11 +51,14 @@ public class SpeakTTS{
                 Media media = new Media(tempFile.toURI().toString());
                 MediaPlayer mediaPlayer = new MediaPlayer(media);
                 mediaPlayer.play();
+                return "Success!";
             } else {
                 System.err.println("Error: " + response.getStatusLine().getStatusCode());
+                return "Error tts";
             }
         } catch (Exception e) {
             e.printStackTrace();
+            return "Exception tss";
         }
     }
 

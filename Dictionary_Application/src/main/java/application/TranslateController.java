@@ -23,7 +23,7 @@ public class TranslateController {
     @FXML
     private Button backButton;
 
-    private final Translator translator = new Translator();
+    private final Translation translation = new Translation();
 
     @FXML
     private void onTranslateButtonClick() {
@@ -35,7 +35,7 @@ public class TranslateController {
         Task<String> translationTask = new Task<>() {
             @Override
             protected String call() {
-                return translator.translate(fromLang, toLang, text);
+                return translation.translate(fromLang, toLang, text);
             }
         };
 

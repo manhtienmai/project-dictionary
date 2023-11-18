@@ -2,8 +2,12 @@ package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,6 +17,8 @@ public class EditController {
     @FXML
     private TextField wordField;
 
+    @FXML
+    private Button backButton;
     @FXML
     private TextField meaningField;
 
@@ -30,11 +36,12 @@ public class EditController {
             meaningField.clear();
         } else {
             // Handle error
+            System.out.println("Error in add word");
         }
     }
 
     private void addWordToDatabase(String word, String meaning) throws SQLException {
-        String sql = "INSERT INTO words (word, detail) VALUES (?, ?)";
+        String sql = "INSERT INTO tbl_edict (word, detail) VALUES (?, ?)";
         DbConnection connect = new DbConnection();
         try (Connection connectDB = connect.getDBConnection()){
             PreparedStatement statement = connectDB.prepareStatement(sql);
@@ -48,4 +55,17 @@ public class EditController {
 
     }
 
+    @FXML
+    private void onBackButtonClick() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/main.fxml"));
+            Parent translateView = (Parent) loader.load();
+            Stage primaryStage = (Stage) backButton.getScene().getWindow();
+            primaryStage.setScene(new Scene(translateView));
+            primaryStage.setTitle("Dictionary");
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
