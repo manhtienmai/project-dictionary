@@ -1,4 +1,4 @@
-package application;
+package application.service;
 
 public abstract class APIService {
     protected String apiKey;

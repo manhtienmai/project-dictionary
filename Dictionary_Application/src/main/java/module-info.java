@@ -14,4 +14,10 @@ module com.example.dictionary_application {
 
     opens application to javafx.fxml;
     exports application;
+    exports application.controller;
+    opens application.controller to javafx.fxml;
+    exports application.util;
+    opens application.util to javafx.fxml;
+    exports application.service;
+    opens application.service to javafx.fxml;
 }

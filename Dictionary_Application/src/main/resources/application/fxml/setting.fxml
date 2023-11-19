@@ -1,40 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SettingController">
-    <ComboBox fx:id="voiceComboBox" layoutX="102.0" layoutY="138.0" prefHeight="39.0" prefWidth="86.0" />
-    <Slider fx:id="speedSlider" layoutX="288.0" layoutY="125.0" max="2.0" min="0.5" prefHeight="52.0" prefWidth="197.0" value="1.0" />
-    <Button layoutX="279.0" layoutY="240.0" onAction="#saveSetting" text="Save" />
-   <MenuBar layoutX="-1.0" layoutY="37.0" prefHeight="25.0" prefWidth="600.0">
-     <menus>
-       <Menu mnemonicParsing="false" text="Phát âm">
-         <items>
-           <MenuItem mnemonicParsing="false" text="hhh" />
-         </items>
-       </Menu>
-       <Menu mnemonicParsing="false" text="Thêm từ">
-         <items>
-           <MenuItem mnemonicParsing="false" text="Delete" />
-         </items>
-       </Menu>
-       <Menu mnemonicParsing="false" text="Sửa từ">
-         <items>
-           <MenuItem mnemonicParsing="false" text="About" />
-         </items>
-       </Menu>
-         <Menu mnemonicParsing="false" text="Xóa từ">
-           <items>
-             <MenuItem mnemonicParsing="false" text="Action 1" />
-           </items>
-         </Menu>
-     </menus>
-   </MenuBar>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SettingController">
+    <Button fx:id="saveSettingButton" layoutX="326.0" layoutY="541.0" onAction="#handleSaveSetting" prefHeight="48.0" prefWidth="147.0" text="Save" />
+   <TabPane layoutX="197.0" layoutY="100.0" prefHeight="434.0" prefWidth="729.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.rightAnchor="1.0">
+     <tabs>
+       <Tab text="Add Word">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <TextField fx:id="wordField" layoutX="143.0" layoutY="35.0" prefHeight="48.0" prefWidth="429.0" AnchorPane.bottomAnchor="307.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="50.0" />
+                     <Text layoutX="60.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Word" />
+                     <Text layoutX="66.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" />
+                     <TextField fx:id="meaningField" layoutX="143.0" layoutY="160.0" prefHeight="40.0" prefWidth="429.0" AnchorPane.bottomAnchor="205.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="160.0" />
+                     <Button fx:id="addWordButton" layoutX="266.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleAddWord" text="Add Word" />
+                  </children>
+               </AnchorPane>
+         </content>
+       </Tab>
+       <Tab text="Update Word">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <Text layoutX="60.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Word" />
+                     <Text layoutX="51.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" />
+                     <TextField fx:id="updateWordField" layoutX="155.0" layoutY="53.0" prefHeight="33.0" prefWidth="429.0" AnchorPane.bottomAnchor="322.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="50.0" />
+                     <TextField fx:id="updateMeaningField" layoutX="155.0" layoutY="161.0" prefHeight="31.0" prefWidth="429.0" AnchorPane.bottomAnchor="213.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="161.0" />
+                     <Button fx:id="updateWordButton" layoutX="285.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleUpdateWord" text="Update" />
+                  </children>
+               </AnchorPane>
+         </content>
+       </Tab>
+         <Tab text="Delete Word">
+           <content>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="729.0">
+                  <children>
+                     <Text layoutX="208.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Word" wrappingWidth="40.571428571428555" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                     <TextField fx:id="deleteWordField" layoutX="290.0" layoutY="84.0" />
+                     <Button fx:id="deleteWordButton" layoutX="332.0" layoutY="176.0" mnemonicParsing="false" onAction="#handleDeleteWord" text="Delete" />
+                  </children>
+               </AnchorPane>
+           </content>
+         </Tab>
+         <Tab text="Pronounciation">
+           <content>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                      <Slider fx:id="speedSlider" layoutX="129.0" layoutY="92.0" max="2.0" min="0.5" prefHeight="52.0" prefWidth="197.0" value="1.0" />
+                  </children>
+               </AnchorPane>
+           </content>
+         </Tab>
+     </tabs>
+   </TabPane>
+   <VBox layoutX="-2.0" layoutY="100.0" prefHeight="348.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+      <children>
+         <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-search" stylesheets="@../style/navigation.css" text="Search" />
+         <Button fx:id="translateButton" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-translate" stylesheets="@../style/navigation.css" text="Translate" />
+         <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#onFavouriteButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-favourite" stylesheets="@../style/navigation.css" text="Favourite" />
+         <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-history" stylesheets="@../style/navigation.css" text="History" />
+      </children>
+   </VBox>
+   <VBox layoutX="-2.0" layoutY="448.0" prefHeight="186.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+      <children>
+         <Button fx:id="settingButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSettingButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting" stylesheets="@../style/navigation.css" text="Setting" />
+      </children>
+   </VBox>
+   <Pane prefHeight="100.0" prefWidth="800.0" styleClass="header-pane" stylesheets="@../style/navigation.css">
+      <children>
+         <Text fill="#1e2b0e" fontSmoothingType="LCD" layoutX="268.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DICTIONARY" wrappingWidth="264.8032989501953">
+            <font>
+               <Font name="Montserrat Regular" size="39.0" />
+            </font>
+         </Text>
+      </children>
+   </Pane>
 
 </AnchorPane>

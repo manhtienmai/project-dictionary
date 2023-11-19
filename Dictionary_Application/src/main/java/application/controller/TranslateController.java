@@ -1,5 +1,6 @@
-package application;
+package application.controller;
 
+import application.Translation;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +11,7 @@ import javafx.concurrent.Task;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 
-public class TranslateController {
+public class TranslateController extends BaseController {
     @FXML
     private TextArea sourceTextArea;
 
@@ -50,17 +51,8 @@ public class TranslateController {
         new Thread(translationTask).start();
     }
 
-    @FXML
-    private void onBackButtonClick() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/main.fxml"));
-            Parent translateView = (Parent) loader.load();
-            Stage primaryStage = (Stage) translateButton.getScene().getWindow();
-            primaryStage.setScene(new Scene(translateView));
-            primaryStage.setTitle("Dictionary");
-            primaryStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    @Override
+    protected Stage getStage() {
+        return (Stage) translateButton.getScene().getWindow();
     }
 }

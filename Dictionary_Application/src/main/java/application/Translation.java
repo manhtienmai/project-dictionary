@@ -4,6 +4,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import application.service.APIService;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -58,7 +59,7 @@ public class Translation extends APIService {
             return firstTranslation.get("text").getAsString();
         } catch (Exception e) {
             e.printStackTrace();
-            return "Error parsing translation response";
+            return "Error translation response";
         }
     }
 

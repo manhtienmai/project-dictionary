@@ -6,16 +6,41 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SearchController">
-    <Label layoutX="50.0" layoutY="35.0" prefHeight="36.0" prefWidth="70.0" text="Search word" />
-    <TableView fx:id="wordView" layoutX="50.0" layoutY="96.0" prefHeight="485.0" prefWidth="175.0">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SearchController">
+    <Label layoutX="86.0" layoutY="113.0" prefHeight="36.0" prefWidth="45.0" text="Search" />
+    <TableView fx:id="wordView" layoutX="86.0" layoutY="162.0" prefHeight="408.0" prefWidth="175.0">
       <columns>
-          <TableColumn fx:id="wordColumn" prefWidth="73.14285278320312" text="Word" />
-          <TableColumn fx:id="meaningColumn" maxWidth="100.0" prefWidth="649.7142944335938" text="Meaning" />
+          <TableColumn fx:id="wordColumn" prefWidth="86.85711669921875" text="Word" />
+          <TableColumn fx:id="meaningColumn" maxWidth="100.0" prefWidth="86.28573608398438" text="Meaning" />
       </columns>
     </TableView>
-    <TextField fx:id="searchField" layoutX="119.0" layoutY="40.0" prefHeight="25.0" prefWidth="649.0" promptText="search new word with exceptional dictionary" />
-   <Button fx:id="backButton" layoutX="716.0" layoutY="527.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
-   <Button fx:id="speakButton" layoutX="713.0" layoutY="96.0" mnemonicParsing="false" onAction="#onSpeakButtonClick" text="Nghe" />
+    <TextField fx:id="searchField" layoutX="124.0" layoutY="119.0" prefHeight="25.0" prefWidth="126.0" promptText="search new word" />
+   <Button fx:id="speakButton" layoutX="728.0" layoutY="150.0" mnemonicParsing="false" onAction="#onSpeakButtonClick" text="Nghe" />
+   <VBox layoutY="100.0" prefHeight="313.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+      <children>
+         <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-search" stylesheets="@../style/navigation.css" text="Search" />
+         <Button fx:id="translateButton" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-translate" stylesheets="@../style/navigation.css" text="Translate" />
+         <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#onFavouriteButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-favourite" stylesheets="@../style/navigation.css" text="Favourite" />
+         <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-history" stylesheets="@../style/navigation.css" text="History" />
+      </children>
+   </VBox>
+   <VBox layoutY="414.0" prefHeight="186.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+      <children>
+         <Button fx:id="settingButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSettingButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting" stylesheets="@../style/navigation.css" text="Setting" />
+      </children>
+   </VBox>
+   <Pane prefHeight="100.0" prefWidth="800.0" styleClass="header-pane" stylesheets="@../style/navigation.css">
+      <children>
+         <Text fill="#1e2b0e" fontSmoothingType="LCD" layoutX="268.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DICTIONARY" wrappingWidth="264.8032989501953">
+            <font>
+               <Font name="Montserrat Regular" size="39.0" />
+            </font>
+         </Text>
+      </children>
+   </Pane>
+   <Button layoutX="656.0" layoutY="150.0" mnemonicParsing="false" text="Button" />
 </Pane>

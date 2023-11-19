@@ -6,10 +6,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TranslateController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TranslateController">
     <children>
         <Pane prefHeight="100.0" prefWidth="800.0" styleClass="header-pane" stylesheets="@../style/navigation.css">
             <Text layoutX="113.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="English" wrappingWidth="103.77191162109375">
@@ -29,18 +30,30 @@
             </ImageView>
         </Pane>
         <AnchorPane layoutY="86.0" prefHeight="520.0" prefWidth="800.0" styleClass="content-pane" stylesheets="@../style/navigation.css">
-            <AnchorPane layoutX="43.0" layoutY="56.0" prefHeight="330.0" prefWidth="330.0" styleClass="language-field" stylesheets="@../style/navigation.css" AnchorPane.leftAnchor="43.0">
-                <TextArea id="sourceTextArea" fx:id="sourceTextArea" layoutX="14.0" layoutY="41.0" prefHeight="300.0" prefWidth="300.0" promptText="Enter text" styleClass="text-area" stylesheets="@../style/navigation.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane layoutX="107.0" layoutY="71.0" prefHeight="281.0" prefWidth="279.0" styleClass="language-field" stylesheets="@../style/navigation.css" AnchorPane.leftAnchor="107.0">
+                <TextArea id="sourceTextArea" fx:id="sourceTextArea" layoutX="14.0" layoutY="88.0" prefHeight="193.0" prefWidth="136.0" promptText="Enter text" styleClass="text-area" stylesheets="@../style/navigation.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </AnchorPane>
-            <AnchorPane layoutX="430.0" layoutY="56.0" prefHeight="330.0" prefWidth="330.0" AnchorPane.rightAnchor="39.71428571428578">
-                <TextArea id="targetTextArea" fx:id="targetTextArea" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" promptText="Translation" styleClass="text-area" stylesheets="@../style/navigation.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane layoutX="478.0" layoutY="72.0" prefHeight="281.0" prefWidth="289.0" AnchorPane.rightAnchor="33.0">
+                <TextArea id="targetTextArea" fx:id="targetTextArea" layoutX="9.0" layoutY="76.0" prefHeight="205.0" prefWidth="214.0" promptText="Translation" styleClass="text-area" stylesheets="@../style/navigation.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </AnchorPane>
-            <Button fx:id="backButton" layoutX="670.0" layoutY="431.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="57.0" prefWidth="104.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="BACK" textFill="WHITE" />
-            <Button id="translateButton" fx:id="translateButton" layoutX="322.0" layoutY="418.0" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefHeight="65.0" prefWidth="156.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="TRANSLATE" textFill="WHITE">
+            <Button id="translateButton" fx:id="translateButton" layoutX="322.0" layoutY="403.0" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefHeight="65.0" prefWidth="156.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="TRANSLATE" textFill="WHITE">
                 <font>
                     <Font size="1.0" />
                 </font>
             </Button>
+         <VBox layoutY="343.0" prefHeight="186.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+            <children>
+               <Button fx:id="settingButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSettingButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting" stylesheets="@../style/navigation.css" text="Setting" />
+            </children>
+         </VBox>
+         <VBox prefHeight="345.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+            <children>
+               <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-search" stylesheets="@../style/navigation.css" text="Search" />
+               <Button fx:id="translateButton1" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-translate" stylesheets="@../style/navigation.css" text="Translate" />
+               <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#onFavouriteButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-favourite" stylesheets="@../style/navigation.css" text="Favourite" />
+               <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-history" stylesheets="@../style/navigation.css" text="History" />
+            </children>
+         </VBox>
         </AnchorPane>
     </children>
 </AnchorPane>

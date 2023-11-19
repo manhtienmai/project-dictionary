@@ -1,21 +1,20 @@
 package application;
+import application.service.APIService;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Stage;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import com.google.gson.JsonObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-public class SpeakTTS extends APIService{
+public class Pronounciation extends APIService {
 
-    public SpeakTTS() {
+    public Pronounciation() {
         super("ce6578568eec4b1a95672c4654fb0cf1",
                 "https://eastus.tts.speech.microsoft.com/cognitiveservices/v1",
                 "eastus");

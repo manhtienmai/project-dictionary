@@ -1,33 +1,26 @@
-package application;
+package application.controller;
 
+import application.util.DbConnection;
+import application.Pronounciation;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import application.Word;
-import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ResourceBundle;
 
-public class SearchController {
+public class SearchController extends BaseController{
     @FXML
     private TableView<Word> wordView;
     @FXML
@@ -40,29 +33,15 @@ public class SearchController {
     @FXML
     private Button speakButton;
 
-    @FXML
-    private Button backButton;
     private final ObservableList<Word> allWords = FXCollections.observableArrayList();
-    private final SpeakTTS tts = new SpeakTTS();
-    @FXML
-    private void onBackButtonClick() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/main.fxml"));
-            Parent translateView = (Parent) loader.load();
-            Stage primaryStage = (Stage) backButton.getScene().getWindow();
-            primaryStage.setScene(new Scene(translateView));
-            primaryStage.setTitle("Dictionary");
-            primaryStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
+    private final Pronounciation tts = new Pronounciation();
     @FXML
     private void initialize() {
+//        already initialize when running application
         DbConnection connect = new DbConnection();
         Connection connectDB = connect.getDBConnection();
-        String query = "select word, detail from tbl_edict";
+        onSpeakButtonClick();
+        String query = "select word, description from av";
 
         //add listener for searchField
         searchField.textProperty().addListener(new ChangeListener<String>() {
@@ -79,7 +58,7 @@ public class SearchController {
 
             while (queryResult.next()){
                 String word = queryResult.getString("word");
-                String definition = queryResult.getString("detail");
+                String definition = queryResult.getString("description");
                 allWords.add(new Word(word, definition));
             }
 
@@ -95,7 +74,6 @@ public class SearchController {
 
     private void filterWords(String searchText) {
         ObservableList<Word> filteredWords = FXCollections.observableArrayList();
-
         if (searchText == null || searchText.isEmpty()) {
             filteredWords.addAll(allWords);
         }else {
@@ -119,5 +97,10 @@ public class SearchController {
 //                SpeakTTS.synthesizeText(wordToSpeak);
             }
         });
+    }
+
+    @Override
+    protected Stage getStage() {
+        return (Stage) wordView.getScene().getWindow();
     }
 }
