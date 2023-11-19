@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
+    <children>
+        <Pane prefHeight="100.0" prefWidth="800.0" styleClass="header-pane" stylesheets="@../style/navigation.css">
+            <Text fill="#1e2b0e" fontSmoothingType="LCD" layoutX="268.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUIZ GAME" wrappingWidth="264.8032989501953">
+                <font>
+                    <Font name="Montserrat Regular" size="39.0" />
+                </font>
+            </Text>
+        </Pane>
+        <AnchorPane layoutY="86.0" prefHeight="520.0" prefWidth="800.0" styleClass="content-pane" stylesheets="@../style/navigation.css">
+            <children>
+                <Label id="" fx:id="questionLabel" layoutX="213.0" layoutY="65.0" prefHeight="91.0" prefWidth="373.0" style="-fx-background-color: white;" text="1.What is ----- ?" textFill="#845858" wrapText="true">
+                    <font>
+                        <Font name="Algerian" size="21.0" />
+                    </font>
+                </Label>
+                <Button fx:id="answer1" layoutX="95.0" layoutY="208.0" mnemonicParsing="false" onAction="#answer1Clicked" prefHeight="119.0" prefWidth="182.0" style="-fx-background-color: white;" text="A">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="answer4" layoutX="485.0" layoutY="374.0" mnemonicParsing="false" onAction="#answer4Clicked" prefHeight="119.0" prefWidth="182.0" style="-fx-background-color: white;" text="D">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="answer3" layoutX="95.0" layoutY="375.0" mnemonicParsing="false" onAction="#answer3Clicked" prefHeight="119.0" prefWidth="182.0" style="-fx-background-color: white;" text="C">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="answer2" layoutX="485.0" layoutY="208.0" mnemonicParsing="false" onAction="#answer2Clicked" prefHeight="119.0" prefWidth="182.0" style="-fx-background-color: white;" text="B">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Text fill="#f7e7e7" layoutX="23.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1234">
+                    <font>
+                        <Font name="Arial Narrow" size="25.0" />
+                    </font>
+                </Text>
+                <Label fx:id="checkAnswer" layoutX="308.0" layoutY="327.0" style="-fx-background-color: White; -fx-background-radius: 5px; -fx-border-radius: 10px;" textAlignment="CENTER" textFill="#534a4a" wrapText="true">
+                    <font>
+                        <Font name="Bell MT Bold" size="50.0" />
+                    </font>
+                </Label>
+                <Label fx:id="answer" layoutX="291.0" layoutY="474.0" style="-fx-background-color: white; -fx-background-radius: 5px;">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+    </children>
+</AnchorPane>

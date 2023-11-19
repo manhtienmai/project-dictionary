@@ -19,6 +19,8 @@ public abstract class BaseController {
     protected Button historyButton;
     @FXML
     protected Button settingButton;
+    @FXML
+    protected Button gameButton;
 
     @FXML
     private void onSearchButtonClick() {
@@ -43,6 +45,12 @@ public abstract class BaseController {
     @FXML
     private void onSettingButtonClick(){
         loadView("/application/fxml/setting.fxml", "Setting");
+    }
+
+
+    @FXML
+    private void onGameButtonClick(){
+        loadView("/application/fxml/Game.fxml", "Game");
     }
 
     protected void showAlert(Alert.AlertType alertType, String title, String message) {
