@@ -5,21 +5,22 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SearchController">
-    <Label layoutX="86.0" layoutY="113.0" prefHeight="36.0" prefWidth="45.0" text="Search" />
-    <TableView fx:id="wordView" layoutX="86.0" layoutY="162.0" prefHeight="408.0" prefWidth="175.0">
-      <columns>
-          <TableColumn fx:id="wordColumn" prefWidth="86.85711669921875" text="Word" />
-          <TableColumn fx:id="meaningColumn" maxWidth="100.0" prefWidth="86.28573608398438" text="Meaning" />
-      </columns>
-    </TableView>
-    <TextField fx:id="searchField" layoutX="124.0" layoutY="119.0" prefHeight="25.0" prefWidth="126.0" promptText="search new word" />
-   <Button fx:id="speakButton" layoutX="728.0" layoutY="150.0" mnemonicParsing="false" onAction="#onSpeakButtonClick" text="Nghe" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SearchController">
+   <Pane prefHeight="100.0" prefWidth="800.0" styleClass="header-pane" stylesheets="@../style/navigation.css">
+      <children>
+         <Text fill="#1e2b0e" fontSmoothingType="LCD" layoutX="268.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DICTIONARY" wrappingWidth="264.8032989501953">
+            <font>
+               <Font name="Montserrat Regular" size="39.0" />
+            </font>
+         </Text>
+      </children>
+   </Pane>
    <VBox layoutY="100.0" prefHeight="313.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
       <children>
          <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-search" stylesheets="@../style/navigation.css" text="Search" />
@@ -33,14 +34,25 @@
          <Button fx:id="settingButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSettingButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting" stylesheets="@../style/navigation.css" text="Setting" />
       </children>
    </VBox>
-   <Pane prefHeight="100.0" prefWidth="800.0" styleClass="header-pane" stylesheets="@../style/navigation.css">
+   <AnchorPane layoutX="72.0" layoutY="100.0" prefHeight="497.0" prefWidth="183.0">
       <children>
-         <Text fill="#1e2b0e" fontSmoothingType="LCD" layoutX="268.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DICTIONARY" wrappingWidth="264.8032989501953">
+          <TextField fx:id="searchField" layoutX="48.0" layoutY="23.0" prefHeight="25.0" prefWidth="126.0" promptText="search new word" />
+          <TableView fx:id="wordView" layoutY="61.0" prefHeight="436.0" prefWidth="175.0">
+            <columns>
+                <TableColumn fx:id="wordColumn" prefWidth="86.85711669921875" text="Word" />
+                <TableColumn fx:id="meaningColumn" maxWidth="100.0" prefWidth="86.28573608398438" text="Meaning" />
+            </columns>
+          </TableView>
+          <Label layoutY="18.0" prefHeight="36.0" prefWidth="52.0" text="Search">
             <font>
-               <Font name="Montserrat Regular" size="39.0" />
+               <Font name="System Bold Italic" size="12.0" />
             </font>
-         </Text>
+         </Label>
       </children>
-   </Pane>
-   <Button layoutX="656.0" layoutY="150.0" mnemonicParsing="false" text="Button" />
+   </AnchorPane>
+   <AnchorPane layoutX="253.0" layoutY="100.0" prefHeight="497.0" prefWidth="545.0" styleClass="search-tab" stylesheets="@../style/search.css">
+      <children>
+         <Button layoutX="468.0" layoutY="49.0" mnemonicParsing="false" styleClass="button-speaker" stylesheets="@../style/search.css" />
+      </children>
+   </AnchorPane>
 </Pane>

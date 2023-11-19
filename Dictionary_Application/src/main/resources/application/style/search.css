@@ -1,0 +1,11 @@
+.search-tab {
+    -fx-graphic: url('../images/translate-icon.png');
+}
+
+.button-speaker {
+    -fx-graphic: url('../images/speaker1.png');
+}
+
+.button-speaker:hover {
+    -fx-graphic: url('../images/speaker.png');
+}
