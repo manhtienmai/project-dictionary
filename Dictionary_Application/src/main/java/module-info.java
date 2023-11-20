@@ -11,6 +11,7 @@ module com.example.dictionary_application {
     requires javafx.media;
     requires org.apache.httpcomponents.httpclient;
     requires org.apache.httpcomponents.httpcore;
+    requires java.sql;
 
     opens application to javafx.fxml;
     exports application;
