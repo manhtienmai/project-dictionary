@@ -52,7 +52,7 @@
     </AnchorPane>
     <AnchorPane layoutX="253.0" layoutY="100.0" prefHeight="497.0" prefWidth="545.0" styleClass="search-tab" stylesheets="@../style/search.css">
         <children>
-            <Button layoutX="372.0" layoutY="49.0" mnemonicParsing="false" styleClass="button-speaker" stylesheets="@../style/search.css" />
+            <Button fx:id="speakButton" layoutX="372.0" layoutY="49.0" mnemonicParsing="false" onAction="#onSpeakButtonClick" styleClass="button-speaker" stylesheets="@../style/search.css" />
             <Button layoutX="456.0" layoutY="49.0" mnemonicParsing="false" styleClass="button-edit" stylesheets="@../style/search.css" />
             <Button layoutX="414.0" layoutY="49.0" mnemonicParsing="false" styleClass="button-favourite" stylesheets="@../style/search.css" />
         </children>
