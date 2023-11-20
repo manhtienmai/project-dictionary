@@ -34,9 +34,6 @@
          <Button fx:id="settingButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false"
                  onAction="#onSettingButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting"
                  stylesheets="@../style/navigation.css" text="Setting"/>
-         <Button fx:id="gameButton" mnemonicParsing="false"
-                 onAction="#onGameButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-search"
-                 stylesheets="@../style/navigation.css" text="Game" />
       </VBox>
    </AnchorPane>
 </AnchorPane>
