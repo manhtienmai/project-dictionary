@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
     <children>
         <Pane prefHeight="100.0" prefWidth="800.0" styleClass="header-pane" stylesheets="@../style/navigation.css">
             <Text fill="#1e2b0e" fontSmoothingType="LCD" layoutX="268.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUIZ GAME" wrappingWidth="264.8032989501953">
@@ -18,27 +18,27 @@
         </Pane>
         <AnchorPane layoutY="86.0" prefHeight="520.0" prefWidth="800.0" styleClass="content-pane" stylesheets="@../style/navigation.css">
             <children>
-                <Label id="" fx:id="questionLabel" layoutX="213.0" layoutY="65.0" prefHeight="91.0" prefWidth="300.0" style="-fx-background-color: white;" text="1234" textFill="#845858" wrapText="true">
+                <Label id="" fx:id="questionLabel" alignment="CENTER" layoutX="238.0" layoutY="66.0" prefHeight="91.0" prefWidth="300.0" styleClass="question-buton" stylesheets="@../style/game.css" text="1234" textFill="#845858" wrapText="true">
                     <font>
                         <Font name="Algerian" size="21.0" />
                     </font>
                 </Label>
-                <Button fx:id="answer1" layoutX="95.0" layoutY="208.0" mnemonicParsing="false" onAction="#answer1Clicked" prefHeight="119.0" prefWidth="182.0" style="-fx-background-color: white;" text="A">
+                <Button fx:id="answer1" layoutX="95.0" layoutY="208.0" mnemonicParsing="false" onAction="#answer1Clicked" prefHeight="119.0" prefWidth="182.0" styleClass="game-button" stylesheets="@../style/game.css" text="A">
                     <font>
                         <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="answer4" layoutX="485.0" layoutY="374.0" mnemonicParsing="false" onAction="#answer4Clicked" prefHeight="119.0" prefWidth="182.0" style="-fx-background-color: white;" text="D">
+                <Button fx:id="answer4" layoutX="485.0" layoutY="374.0" mnemonicParsing="false" onAction="#answer4Clicked" prefHeight="119.0" prefWidth="182.0" styleClass="game-button" stylesheets="@../style/game.css" text="D">
                     <font>
                         <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="answer3" layoutX="95.0" layoutY="375.0" mnemonicParsing="false" onAction="#answer3Clicked" prefHeight="119.0" prefWidth="182.0" style="-fx-background-color: white;" text="C">
+                <Button fx:id="answer3" layoutX="95.0" layoutY="375.0" mnemonicParsing="false" onAction="#answer3Clicked" prefHeight="119.0" prefWidth="182.0" styleClass="game-button" stylesheets="@../style/game.css" text="C">
                     <font>
                         <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="answer2" layoutX="485.0" layoutY="208.0" mnemonicParsing="false" onAction="#answer2Clicked" prefHeight="119.0" prefWidth="182.0" style="-fx-background-color: white;" text="B">
+                <Button fx:id="answer2" layoutX="485.0" layoutY="208.0" mnemonicParsing="false" onAction="#answer2Clicked" prefHeight="119.0" prefWidth="182.0" styleClass="game-button" stylesheets="@../style/game.css" text="B">
                     <font>
                         <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                     </font>
@@ -49,7 +49,7 @@
                     </font>
                 </Label>
                 <Label fx:id="rightAnswer" layoutX="291.0" layoutY="474.0" style="-fx-background-color: white; -fx-background-radius: 5px;" />
-                <Button fx:id="backButton" layoutX="695.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="home" textFill="#efdcdc">
+                <Button fx:id="backButton" layoutX="684.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="52.0" prefWidth="101.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="HOME" textFill="#efdcdc">
                     <font>
                         <Font size="1.0" />
                     </font></Button>

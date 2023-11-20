@@ -1,0 +1,8 @@
+.game-button{
+    -fx-background-color : #16868e;
+    -fx-font-family: 'Algerian';
+    -fx-font-size: 20;
+}
+.question-buton{
+    -fx-background-color : #9BBEC8;
+}

@@ -42,7 +42,7 @@ public class DbConnection {
 
     public Connection getDBConnection(){
         System.out.println("Attempting to connect to the database...");
-        String url = "jdbc:sqlite:D:/dictionary.db";
+        String url = "jdbc:sqlite:F:/dictionary.db";
 
         try {
             Class.forName("org.sqlite.JDBC");
