@@ -1,26 +1,31 @@
 package application.controller;
 
-import application.Question;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 
 public class GameController {
+    @FXML
+    private Label rightAnswer;
 
     @FXML
-    private Label answer;
-    @FXML
     private Label checkAnswer;
-    @FXML
-    private Label hangmanText;
 
     @FXML
     private Label questionLabel;
@@ -37,10 +42,14 @@ public class GameController {
     @FXML
     private Button answer4;
 
+
+    @FXML
+    private Button backButton;
+
     private List<Question> questions;
     private int currentQuestionIndex;
 
-//    private Timeline answerStatusTimeline;
+    private Timeline answerStatusTimeline;
 
     private int score = 0;
     private int maxWrongAttempts = 3;
@@ -55,12 +64,12 @@ public class GameController {
         // Shuffle questions
         Collections.shuffle(questions);
 
-//        answerStatusTimeline = new Timeline();
-//
-//        // Thiết lập sự kiện kết thúc cho Timeline
-//        answerStatusTimeline.setOnFinished(event -> {
-//            checkAnswer.setText(""); // Ẩn đi nội dung khi kết thúc
-//        });
+        answerStatusTimeline = new Timeline();
+
+        // Thiết lập sự kiện kết thúc cho Timeline
+        answerStatusTimeline.setOnFinished(event -> {
+            checkAnswer.setText(""); // Ẩn đi nội dung khi kết thúc
+        });
 
         // Display the first question
         showNextQuestion();
@@ -158,7 +167,7 @@ public class GameController {
             AnchorPane resultPane = loader.load();
 
             // Truy cập controller của ResultController
-            ResultController resultController = loader.getController();
+            application.controller.ResultController resultController = loader.getController();
 
             // Pass thông tin kết quả
             resultController.initialize(score, totalQuestions);
@@ -184,15 +193,17 @@ public class GameController {
         } else {
             checkAnswer.setText("Wrong");
             checkAnswer.setStyle("-fx-text-fill: red;");
-//            answer.setText("Correct Answer: " + correctAnswer);
-//            answer.setStyle("-fx-text-fill: green;");
+            rightAnswer.setText("Correct Answer: " + correctAnswer);
+            rightAnswer.setStyle("-fx-text-fill: green;");
             wrongAttempts++;
         }
 
-//        answerStatusTimeline.getKeyFrames().clear();
-//        KeyFrame keyFrame = new KeyFrame(Duration.seconds(2), new KeyValue(checkAnswer.textProperty(), ""));
-//        answerStatusTimeline.getKeyFrames().add(keyFrame);
-//        answerStatusTimeline.play();
+        answerStatusTimeline.getKeyFrames().clear();
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(2), new KeyValue(checkAnswer.textProperty(), ""));
+        KeyFrame keyFrame1 = new KeyFrame(Duration.seconds(2), new KeyValue(rightAnswer.textProperty(), ""));
+        answerStatusTimeline.getKeyFrames().add(keyFrame);
+        answerStatusTimeline.getKeyFrames().add(keyFrame1);
+        answerStatusTimeline.play();
     }
 
     @FXML
@@ -221,5 +232,19 @@ public class GameController {
     @FXML
     private void answer4Clicked() {
         handleAnswerButtonClick(new javafx.event.ActionEvent(answer4, null));
+    }
+
+    @FXML
+    private void onBackButtonClick() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/main.fxml"));
+            Parent gameView = (Parent) loader.load();
+            Stage primaryStage = (Stage) backButton.getScene().getWindow();
+            primaryStage.setScene(new Scene(gameView));
+            primaryStage.setTitle("Dictionary");
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
