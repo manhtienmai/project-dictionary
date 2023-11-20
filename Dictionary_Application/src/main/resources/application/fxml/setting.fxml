@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SettingController">
+<AnchorPane prefHeight="633.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SettingController">
    <TabPane layoutX="197.0" layoutY="100.0" prefHeight="434.0" prefWidth="729.0" styleClass="tab-setting" stylesheets="@../style/setting.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.rightAnchor="1.0">
      <tabs>
        <Tab text="Add Word">
@@ -101,7 +101,7 @@
          <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-history" stylesheets="@../style/navigation.css" text="History" />
       </children>
    </VBox>
-   <VBox layoutX="-2.0" layoutY="448.0" prefHeight="186.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
+   <VBox layoutX="-2.0" layoutY="448.0" prefHeight="182.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
       <children>
          <Button fx:id="settingButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSettingButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting" stylesheets="@../style/navigation.css" text="Setting" />
       </children>
@@ -115,11 +115,11 @@
          </Text>
       </children>
    </Pane>
-   <AnchorPane layoutX="69.0" layoutY="538.0" prefHeight="127.0" prefWidth="730.0">
+   <AnchorPane layoutX="69.0" layoutY="538.0" prefHeight="91.0" prefWidth="730.0">
       <children>
-         <AnchorPane prefHeight="138.0" prefWidth="730.0" styleClass="setting-footer" stylesheets="@../style/setting.css">
+         <AnchorPane prefHeight="92.0" prefWidth="730.0" styleClass="setting-footer" stylesheets="@../style/setting.css">
             <children>
-                <Button fx:id="saveSettingButton" layoutX="279.0" layoutY="45.0" onAction="#handleSaveSetting" prefHeight="48.0" prefWidth="126.0" styleClass="setting-button" stylesheets="@../style/setting.css" text="Save" />
+                <Button fx:id="saveSettingButton" layoutX="278.0" layoutY="22.0" onAction="#handleSaveSetting" prefHeight="48.0" prefWidth="126.0" styleClass="setting-button" stylesheets="@../style/setting.css" text="Save" />
             </children>
          </AnchorPane>
       </children>
