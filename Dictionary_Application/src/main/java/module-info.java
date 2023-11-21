@@ -11,6 +11,9 @@ module com.example.dictionary_application {
     requires javafx.media;
     requires org.apache.httpcomponents.httpclient;
     requires org.apache.httpcomponents.httpcore;
+    requires javafx.web;
+    requires com.fasterxml.jackson.databind;
+    requires org.xerial.sqlitejdbc;
 
     opens application to javafx.fxml;
     exports application;
@@ -20,4 +23,8 @@ module com.example.dictionary_application {
     opens application.util to javafx.fxml;
     exports application.service;
     opens application.service to javafx.fxml;
+    exports application.database;
+    opens application.database to javafx.fxml;
+    exports application.model;
+    opens application.model to javafx.fxml;
 }

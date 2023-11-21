@@ -1,4 +1,4 @@
-package application;
+package application.service;
 import application.service.APIService;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -20,11 +20,12 @@ public class Pronounciation extends APIService {
                 "eastus");
     }
 
+    // synText: sending a string to TTS and play auido
     @Override
     public String makeRequestAPI(String text) {
-        return synthesizeText(text);
+        return synText(text);
     }
-    public String synthesizeText(String text) {
+    public String synText(String text) {
         String ttsUrl = "https://" + region + ".tts.speech.microsoft.com/cognitiveservices/v1";
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {

@@ -43,21 +43,8 @@
     -fx-padding: 6px;
 }
 
-/* Icon*/
-.button-search {
-    -fx-graphic: url('../images/search-icon.png');
-}
-.button-translate {
-    -fx-graphic: url('../images/translate-icon.png');
-}
-.button-favourite {
-    -fx-graphic: url('../images/favourite-icon.png');
-}
-.button-history {
-    -fx-graphic: url('../images/history-icon.png');
-}
 .button-setting {
-    -fx-graphic: url('../images/setting-icon.png');
+    -fx-graphic: url('../images/sound.png');
 }
 
 /* translate*/
@@ -65,7 +52,7 @@
     -fx-background-color: #b9e0cc;
 }
 .content-pane {
-    -fx-background-color: #08172a;
+    -fx-background-color: #f0f0f0;
 }
 .button-style {
     -fx-background-color: #427D9D;
@@ -85,14 +72,6 @@
     -fx-font-family: "Arial";
     -fx-font-size: 14px;
 }
-/*.text-field {*/
-/*    -fx-background-color: #9BBEC8;*/
-/*    -fx-border-color: black;*/
-/*    -fx-border-width: 2;*/
-/*    -fx-font-size: 27px;*/
-/*    -fx-font-weight: bold;*/
-/*}*/
-
 .text-field:hover {
     -fx-background-color: #a9d0e8;
 }
@@ -116,19 +95,10 @@
 }
 
 .button:hover {
-    -fx-background-color: #1E5A82; /* Slightly lighter blue for hover */
+    -fx-background-color: #1E5A82;
 }
 
-/*.translate-button {*/
-/*    -fx-background-color: transparent;*/
-/*    -fx-border-color: white;*/
-/*    -fx-border-style: solid inside;*/
-/*    -fx-border-width: 2;*/
-/*    -fx-border-insets: 5;*/
-/*    -fx-border-radius: 5;*/
-/*    -fx-padding: 10 20 10 20;*/
-/*    -fx-font-size: 16px;*/
-/*}*/
+
 .translate-button {
     -fx-background-color: linear-gradient(to right, #AF40FF, #5B42F3 50%, #00DDEB);
     -fx-border-color: transparent;

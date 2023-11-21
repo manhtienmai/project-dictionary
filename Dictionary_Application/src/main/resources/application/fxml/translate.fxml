@@ -6,54 +6,34 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TranslateController">
-    <children>
-        <Pane prefHeight="100.0" prefWidth="800.0" styleClass="header-pane" stylesheets="@../style/navigation.css">
-            <Text layoutX="113.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="English" wrappingWidth="103.77191162109375">
+<StackPane stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TranslateController">
+    <AnchorPane prefHeight="530.0" prefWidth="800.0">
+        <AnchorPane layoutX="41.0" layoutY="150.0" prefHeight="190.0" prefWidth="350.0" styleClass="language-field" AnchorPane.leftAnchor="41.0">
+            <TextArea id="sourceTextArea" fx:id="sourceTextArea" layoutX="14.0" layoutY="88.0" prefHeight="160.0" prefWidth="350.0" promptText="Enter text" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="pronounceButton" layoutX="283.0" layoutY="140.0" mnemonicParsing="false" onAction="#onPronounceButtonClick" prefHeight="36.0" prefWidth="34.0" styleClass="button-speak" />
+        </AnchorPane>
+        <AnchorPane layoutX="425.0" layoutY="154.0" prefHeight="190.0" prefWidth="350.0" AnchorPane.rightAnchor="36.0">
+            <TextArea id="targetTextArea" fx:id="targetTextArea" layoutY="-1.0" prefHeight="167.0" prefWidth="350.0" promptText="Translation" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        </AnchorPane>
+        <Pane layoutX="11.0" layoutY="31.0" prefHeight="68.0" prefWidth="800.0" stylesheets="@../style/navigation.css">
+            <Text layoutX="180.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="English" wrappingWidth="103.77191162109375">
                 <font>
-                    <Font name="System Bold" size="30.0" />
+                    <Font name="System Bold" size="20.0" />
                 </font>
             </Text>
-            <Text layoutX="506.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIETNAMESE" wrappingWidth="194.6290283203125">
+            <Text layoutX="479.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="VIETNAMESE" wrappingWidth="194.6290283203125">
                 <font>
-                    <Font name="System Bold" size="30.0" />
+                    <Font name="System Bold" size="20.0" />
                 </font>
             </Text>
-            <ImageView fitHeight="48.0" fitWidth="53.0" layoutX="376.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../images/convert.png" />
-                </image>
+            <ImageView fitHeight="48.0" fitWidth="53.0" layoutX="376.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/convert.png" />
             </ImageView>
         </Pane>
-        <AnchorPane layoutY="86.0" prefHeight="520.0" prefWidth="800.0" styleClass="content-pane" stylesheets="@../style/navigation.css">
-            <AnchorPane layoutX="107.0" layoutY="71.0" prefHeight="281.0" prefWidth="279.0" styleClass="language-field" stylesheets="@../style/navigation.css" AnchorPane.leftAnchor="107.0">
-                <TextArea id="sourceTextArea" fx:id="sourceTextArea" layoutX="14.0" layoutY="88.0" prefHeight="193.0" prefWidth="136.0" promptText="Enter text" styleClass="text-area" stylesheets="@../style/navigation.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            </AnchorPane>
-            <AnchorPane layoutX="478.0" layoutY="72.0" prefHeight="281.0" prefWidth="289.0" AnchorPane.rightAnchor="33.0">
-                <TextArea id="targetTextArea" fx:id="targetTextArea" layoutX="9.0" layoutY="76.0" prefHeight="205.0" prefWidth="214.0" promptText="Translation" styleClass="text-area" stylesheets="@../style/navigation.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            </AnchorPane>
-            <Button id="translateButton" fx:id="translateButton" layoutX="322.0" layoutY="403.0" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefHeight="65.0" prefWidth="156.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="TRANSLATE" textFill="WHITE">
-                <font>
-                    <Font size="1.0" />
-                </font>
-            </Button>
-         <VBox layoutY="343.0" prefHeight="186.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
-            <children>
-               <Button fx:id="settingButton" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSettingButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-setting" stylesheets="@../style/navigation.css" text="Setting" />
-            </children>
-         </VBox>
-         <VBox prefHeight="345.0" prefWidth="72.0" style="-fx-background-color: #DDF2FD;">
-            <children>
-               <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-search" stylesheets="@../style/navigation.css" text="Search" />
-               <Button fx:id="translateButton1" mnemonicParsing="false" onAction="#onTranslateButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-translate" stylesheets="@../style/navigation.css" text="Translate" />
-               <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#onFavouriteButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-favourite" stylesheets="@../style/navigation.css" text="Favourite" />
-               <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="50.0" prefWidth="90.0" styleClass="button-history" stylesheets="@../style/navigation.css" text="History" />
-            </children>
-         </VBox>
-        </AnchorPane>
-    </children>
-</AnchorPane>
+      <Button fx:id="translateButton" layoutX="373.0" layoutY="458.0" mnemonicParsing="false" onAction="#onTranslateButtonClick" styleClass="button-function" text="Translate" />
+    </AnchorPane>
+</StackPane>

@@ -1,10 +1,9 @@
-package application;
+package application.service;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-import application.service.APIService;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -59,13 +58,13 @@ public class Translation extends APIService {
             return firstTranslation.get("text").getAsString();
         } catch (Exception e) {
             e.printStackTrace();
-            return "Error translation response";
+            return "Error translation";
         }
     }
 
     public static void main(String[] args) {
         Translation translation = new Translation();
-        String translatedText = translation.makeRequestAPI("nation");
+        String translatedText = translation.makeRequestAPI("abolish");
         System.out.println(translatedText);
     }
 }

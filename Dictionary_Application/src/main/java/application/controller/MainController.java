@@ -1,17 +1,16 @@
 package application.controller;
 
-import application.util.DbConnection;
-import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.sql.Connection;
-
 public class MainController extends BaseController {
-
-    @Override
-    protected Stage getStage() {
-        return (Stage) searchButton.getScene().getWindow();
-    }
+//    @Override
+//    protected Stage getStage() {
+//        return (Stage) searchButton.getScene().getWindow();
+//    }
 
 //    @FXML
 //    public void initialize() {
