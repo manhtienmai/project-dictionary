@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .main-layout {
     -fx-padding: 20px;
     -fx-background-color: white;
@@ -28,3 +29,13 @@
     -fx-padding: 5px;
     -fx-border-radius: 5;
 }
+=======
+.game-button{
+    -fx-background-color : #16868e;
+    -fx-font-family: 'Algerian';
+    -fx-font-size: 20;
+}
+.question-buton{
+    -fx-background-color : #9BBEC8;
+}
+>>>>>>> 6090301e2b79c9fe92bc0096c1ded9c7e471598a

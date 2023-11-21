@@ -1,0 +1,27 @@
+.search-tab {
+    -fx-graphic: url('../images/translate-icon.png');
+}
+
+.button-speaker {
+    -fx-graphic: url('../images/speaker.png');
+}
+
+.button-speaker:hover {
+    -fx-graphic: url('../images/speaker1.png');
+}
+
+.button-favourite {
+    -fx-graphic: url('../images/favourite.png');
+}
+
+.button-favourite:hover{
+    -fx-graphic: url('../images/favourite-icon.png');
+}
+
+.button-edit {
+    -fx-graphic: url('../images/edit1.png');
+}
+
+.button-edit:hover{
+    -fx-graphic: url('../images/edit.png');
+}

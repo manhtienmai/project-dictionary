@@ -18,7 +18,7 @@
                 <Text layoutX="60.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" />
                 <TextField fx:id="meaningField" layoutX="151.0" layoutY="96.0" prefHeight="28.0" prefWidth="112.0" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="96.0" />
                 <Button fx:id="addWordButton" layoutX="262.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleAddWord" text="Save" />
-            <Button fx:id="cancelButton" layoutX="75.0" layoutY="130.0" mnemonicParsing="false" text="Cancel" />
+                <Button fx:id="cancelButton" layoutX="75.0" layoutY="130.0" mnemonicParsing="false" text="Cancel" />
             </AnchorPane>
         </Tab>
         <Tab text="Update Word">
@@ -29,7 +29,7 @@
                     <TextField fx:id="updateWordField" layoutX="149.0" layoutY="33.0" prefHeight="28.0" prefWidth="89.0" AnchorPane.bottomAnchor="119.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="122.0" AnchorPane.topAnchor="33.0" />
                     <TextField fx:id="updateMeaningField" layoutX="145.0" layoutY="85.0" prefHeight="25.0" prefWidth="98.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="117.0" AnchorPane.topAnchor="85.0" />
                     <Button fx:id="updateWordButton" layoutX="243.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleUpdateWord" text="Save" />
-               <Button layoutX="63.0" layoutY="136.0" mnemonicParsing="false" text="Cancel" />
+                    <Button layoutX="63.0" layoutY="136.0" mnemonicParsing="false" text="Cancel" />
                 </children>
             </AnchorPane>
         </Tab>
@@ -40,7 +40,7 @@
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                     <TextField fx:id="deleteWordField" layoutX="135.0" layoutY="63.0" prefHeight="26.0" prefWidth="160.0" />
                     <Button fx:id="deleteWordButton" layoutX="244.0" layoutY="127.0" mnemonicParsing="false" onAction="#handleDeleteWord" text="Delete" />
-               <Button layoutX="72.0" layoutY="126.0" mnemonicParsing="false" text="Cancel" />
+                    <Button layoutX="72.0" layoutY="126.0" mnemonicParsing="false" text="Cancel" />
                 </children>
             </AnchorPane>
         </Tab>

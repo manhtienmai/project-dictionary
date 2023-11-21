@@ -1,0 +1,20 @@
+.setting-tab{
+    -fx-background-color: #26d6c6;
+}
+
+.setting-button{
+    -fx-background-color: linear-gradient(to right, #AF40FF, #5B42F3 50%, #00DDEB);
+    -fx-border-color: transparent;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-text-fill: white;
+    -fx-font-family: "Phantomsans", sans-serif;
+    -fx-font-size: 16px;
+    -fx-padding: 16px 24px;
+    -fx-effect: dropshadow(three-pass-box, rgba(151, 65, 252, 0.2), 15, 0, 0, 5);
+    -fx-cursor: hand;
+}
+
+.setting-footer{
+    -fx-background-color: #b9e0cc
+}

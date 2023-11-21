@@ -10,34 +10,34 @@
 
 
 <StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ResultController">
-   <children>
-      <AnchorPane prefHeight="530.0" prefWidth="800.0">
-          <children>
-              <Label fx:id="marks" layoutX="107.0" layoutY="170.0" prefHeight="130.0" prefWidth="126.0" style="-fx-background-color: skyblue; -fx-background-radius: 16px; -fx-border-radius: 16px;" text="7/10" textAlignment="CENTER" textFill="#1f3eff">
-                  <font>
-                      <Font size="22.0" />
-                  </font>
-                  <padding>
-                      <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
-                  </padding>
-              </Label>
-              <ProgressIndicator fx:id="correctProgress" layoutX="330.0" layoutY="165.0" minHeight="140.0" minWidth="140.0" prefHeight="155.0" prefWidth="140.0" progress="0.9" style="-fx-background-color: lightgreen; -fx-progress-color: green; -fx-font-weight: 900; -fx-font-size: 18px; -fx-background-radius: 16px; -fx-border-radius: 16px; -fx-box-border: green;">
-                  <padding>
-                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                  </padding>
-              </ProgressIndicator>
-              <ProgressIndicator fx:id="wrongProgress" layoutX="568.0" layoutY="165.0" minHeight="140.0" minWidth="140.0" progress="0.1" style="-fx-background-color: FFCDD2; -fx-progress-color: red; -fx-font-weight: 900; -fx-font-size: 18px; -fx-background-radius: 16px; -fx-border-radius: 16px; -fx-box-border: red;">
-                  <padding>
-                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                  </padding>
-              </ProgressIndicator>
-              <Label fx:id="comment" layoutX="311.0" layoutY="50.0" text="Excellent">
-                  <font>
-                      <Font size="46.0" />
-                  </font>
-              </Label>
-              <Button fx:id="againButton" layoutX="348.0" layoutY="399.0" mnemonicParsing="false" onAction="#onPlayAgainClick" prefHeight="57.0" prefWidth="104.0" text="Again" textFill="WHITE" />
-          </children>
-      </AnchorPane>
-   </children>
+    <children>
+        <AnchorPane prefHeight="530.0" prefWidth="800.0">
+            <children>
+                <Label fx:id="marks" layoutX="107.0" layoutY="170.0" prefHeight="130.0" prefWidth="126.0" style="-fx-background-color: skyblue; -fx-background-radius: 16px; -fx-border-radius: 16px;" text="7/10" textAlignment="CENTER" textFill="#1f3eff">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
+                    </padding>
+                </Label>
+                <ProgressIndicator fx:id="correctProgress" layoutX="330.0" layoutY="165.0" minHeight="140.0" minWidth="140.0" prefHeight="155.0" prefWidth="140.0" progress="0.9" style="-fx-background-color: lightgreen; -fx-progress-color: green; -fx-font-weight: 900; -fx-font-size: 18px; -fx-background-radius: 16px; -fx-border-radius: 16px; -fx-box-border: green;">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </ProgressIndicator>
+                <ProgressIndicator fx:id="wrongProgress" layoutX="568.0" layoutY="165.0" minHeight="140.0" minWidth="140.0" progress="0.1" style="-fx-background-color: FFCDD2; -fx-progress-color: red; -fx-font-weight: 900; -fx-font-size: 18px; -fx-background-radius: 16px; -fx-border-radius: 16px; -fx-box-border: red;">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </ProgressIndicator>
+                <Label fx:id="comment" layoutX="311.0" layoutY="50.0" text="Excellent">
+                    <font>
+                        <Font size="46.0" />
+                    </font>
+                </Label>
+                <Button fx:id="againButton" layoutX="348.0" layoutY="399.0" mnemonicParsing="false" onAction="#onPlayAgainClick" prefHeight="57.0" prefWidth="104.0" text="Again" textFill="WHITE" />
+            </children>
+        </AnchorPane>
+    </children>
 </StackPane>
