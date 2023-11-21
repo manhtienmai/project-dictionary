@@ -7,50 +7,50 @@
 
 
 <StackPane fx:id="contentPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.Game2Controller">
-    <children>
-        <AnchorPane fx:id="AnchorPane" prefHeight="570.0" prefWidth="800.0">
-            <children>
-                <Button fx:id="EngButton3" layoutX="659.0" layoutY="313.0" mnemonicParsing="false" onAction="#Eng3Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="từ 3" textFill="#efdcdc">
-                    <font>
-                        <Font size="1.0" />
-                    </font>
-                </Button>
-                <Button fx:id="EngButton4" layoutX="659.0" layoutY="109.0" mnemonicParsing="false" onAction="#Eng4Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="từ 4" textFill="#efdcdc">
-                    <font>
-                        <Font size="1.0" />
-                    </font>
-                </Button>
-                <Button fx:id="VieButton4" layoutX="49.0" layoutY="304.0" mnemonicParsing="false" onAction="#Vie4Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="đáp 4" textFill="#efdcdc">
-                    <font>
-                        <Font size="1.0" />
-                    </font>
-                </Button>
-                <Button fx:id="VieButton3" layoutX="468.0" layoutY="109.0" mnemonicParsing="false" onAction="#Vie3Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="đáp 3" textFill="#efdcdc">
-                    <font>
-                        <Font size="1.0" />
-                    </font>
-                </Button>
-                <Button fx:id="VieButton2" layoutX="468.0" layoutY="313.0" mnemonicParsing="false" onAction="#Vie2Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="đáp 2" textFill="#efdcdc">
-                    <font>
-                        <Font size="1.0" />
-                    </font>
-                </Button>
-                <Button fx:id="EngButton2" layoutX="262.0" layoutY="109.0" mnemonicParsing="false" onAction="#Eng2Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="từ 2" textFill="#efdcdc">
-                    <font>
-                        <Font size="1.0" />
-                    </font>
-                </Button>
-                <Button fx:id="VieButton1" layoutX="262.0" layoutY="304.0" mnemonicParsing="false" onAction="#Vie1Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="đáp 1" textFill="#efdcdc">
-                    <font>
-                        <Font size="1.0" />
-                    </font>
-                </Button>
-                <Button fx:id="EngButton1" layoutX="49.0" layoutY="109.0" mnemonicParsing="false" onAction="#Eng1Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="từ 1" textFill="#efdcdc">
-                    <font>
-                        <Font size="1.0" />
-                    </font>
-                </Button>
-            </children>
-        </AnchorPane>
-    </children>
+   <children>
+      <AnchorPane fx:id="AnchorPane" prefHeight="570.0" prefWidth="800.0">
+         <children>
+              <Button fx:id="EngButton3" layoutX="659.0" layoutY="313.0" mnemonicParsing="false" onAction="#Eng3Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="từ 3" textFill="#efdcdc">
+                  <font>
+                      <Font size="1.0" />
+                  </font>
+              </Button>
+              <Button fx:id="EngButton4" layoutX="659.0" layoutY="109.0" mnemonicParsing="false" onAction="#Eng4Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="từ 4" textFill="#efdcdc">
+                  <font>
+                      <Font size="1.0" />
+                  </font>
+              </Button>
+              <Button fx:id="VieButton4" layoutX="49.0" layoutY="304.0" mnemonicParsing="false" onAction="#Vie4Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="đáp 4" textFill="#efdcdc">
+                  <font>
+                      <Font size="1.0" />
+                  </font>
+              </Button>
+              <Button fx:id="VieButton3" layoutX="468.0" layoutY="109.0" mnemonicParsing="false" onAction="#Vie3Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="đáp 3" textFill="#efdcdc">
+                  <font>
+                      <Font size="1.0" />
+                  </font>
+              </Button>
+              <Button fx:id="VieButton2" layoutX="468.0" layoutY="313.0" mnemonicParsing="false" onAction="#Vie2Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="đáp 2" textFill="#efdcdc">
+                  <font>
+                      <Font size="1.0" />
+                  </font>
+              </Button>
+              <Button fx:id="EngButton2" layoutX="262.0" layoutY="109.0" mnemonicParsing="false" onAction="#Eng2Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="từ 2" textFill="#efdcdc">
+                  <font>
+                      <Font size="1.0" />
+                  </font>
+              </Button>
+              <Button fx:id="VieButton1" layoutX="262.0" layoutY="304.0" mnemonicParsing="false" onAction="#Vie1Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="đáp 1" textFill="#efdcdc">
+                  <font>
+                      <Font size="1.0" />
+                  </font>
+              </Button>
+              <Button fx:id="EngButton1" layoutX="49.0" layoutY="109.0" mnemonicParsing="false" onAction="#Eng1Clicked" prefHeight="90.0" prefWidth="126.0" styleClass="translate-button" stylesheets="@../style/navigation.css" text="từ 1" textFill="#efdcdc">
+                  <font>
+                      <Font size="1.0" />
+                  </font>
+              </Button>
+         </children>
+      </AnchorPane>
+   </children>
 </StackPane>

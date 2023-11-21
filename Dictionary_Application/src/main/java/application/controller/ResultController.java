@@ -1,7 +1,5 @@
 package application.controller;
 
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,22 +16,6 @@ public class ResultController extends BaseController{
 
     @FXML
     private ProgressIndicator correctProgress, wrongProgress;
-public class ResultController {
-
-    @FXML
-    private Label comment;
-
-    @FXML
-    private Label marks;
-
-    @FXML
-    private ProgressIndicator correctProgress;
-
-    @FXML
-    private ProgressIndicator wrongProgress;
-
-    @FXML
-    private Button backButton;
 
     @FXML
     public Button againButton;
@@ -62,23 +44,6 @@ public class ResultController {
     private void onPlayAgainClick() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/game.fxml"));
-    public void onBackButtonClick() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/main.fxml"));
-            Parent resultView = (Parent) loader.load();
-            Stage primaryStage = (Stage) backButton.getScene().getWindow();
-            primaryStage.setScene(new Scene(resultView));
-            primaryStage.setTitle("Dictionary");
-            primaryStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void onPlayAgainClick() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/fxml/Game.fxml"));
             Parent resultView = (Parent) loader.load();
             Stage primaryStage = (Stage) againButton.getScene().getWindow();
             primaryStage.setScene(new Scene(resultView));
