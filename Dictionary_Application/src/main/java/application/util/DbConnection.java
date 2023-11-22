@@ -15,7 +15,7 @@ public class DbConnection {
     }
 
     private void createConnection() {
-        String url = "jdbc:sqlite:D:/dictionary.db";
+        String url = "jdbc:sqlite:F:/dictionary.db";
 
         try {
             Class.forName("org.sqlite.JDBC");

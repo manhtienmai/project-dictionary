@@ -28,3 +28,7 @@
     -fx-padding: 5px;
     -fx-border-radius: 5;
 }
+
+.again-button {
+    -fx-background-color: #4682B4;
+}
