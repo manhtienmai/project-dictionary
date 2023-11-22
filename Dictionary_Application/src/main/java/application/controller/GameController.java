@@ -118,12 +118,10 @@ public class GameController {
             List<Button> answerButtons = List.of(answer1, answer2, answer3, answer4);
             List<String> options = currentQuestion.getDummyOptions();
 
-            // Ensure that the correct answer is included in the options
             if (!options.contains(currentQuestion.getCorrectAnswer())) {
                 options.set(0, currentQuestion.getCorrectAnswer());
             }
 
-            // Randomly shuffle the options
             Collections.shuffle(options);
 
             for (int i = 0; i < answerButtons.size(); i++) {
