@@ -45,7 +45,7 @@ public class DictionaryCommandLine {
                     dictionaryManagement.playGame();
                     break;
                 case 8:
-                    path = Validation.getString("Nhập file : ");
+                    path = "src/dictionary.txt";
                     this.dictionaryManagement.insertFromFile(path);
                     break;
                 case 9:
