@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18f65eeb-4444-42c1-ad76-38cca40f22c3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/controller/Result2Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application/fxml/result2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/controller/Game2Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/controller/Game2Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/controller/ResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/controller/ResultController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/util/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/util/DbConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application/fxml/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/fxml/Game.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application/fxml/game2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/fxml/game2.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/fxml/result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/fxml/result.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application/style/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application/style/game.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project-dictionary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../project-dictionary.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/DictionaryCommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/DictionaryCommandLine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,7 +65,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/OOP_Project/project-dictionary/Dictionary_Application",
+    "last_opened_file_path": "D:/BTL Dictionary/project-dictionary",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -137,6 +142,9 @@
       <workItem from="1700595034060" duration="3341000" />
       <workItem from="1700598860055" duration="302000" />
       <workItem from="1700624905514" duration="2089000" />
+      <workItem from="1700627856688" duration="2811000" />
+      <workItem from="1700630841647" duration="1110000" />
+      <workItem from="1700639973899" duration="2825000" />
     </task>
     <servers />
   </component>
@@ -150,6 +158,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/application/controller/SearchController.java</url>
           <line>254</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/application/controller/Game2Controller.java</url>
+          <line>183</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
