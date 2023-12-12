@@ -1,5 +1,6 @@
 package application.controller;
 
+import application.model.Question;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
